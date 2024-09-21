@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Autenticacion.Api.Transversal.Interfaces")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ab2841b035ffb838c7296bbf911bf0b6b2973fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93b4fe60d3e463ce5abab442d152e302beddbed5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Autenticacion.Api.Transversal.Interfaces")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Autenticacion.Api.Transversal.Interfaces")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

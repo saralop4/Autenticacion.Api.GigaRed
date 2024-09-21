@@ -5,9 +5,14 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<StartupObject>Autenticacion.Api.Program</StartupObject>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="8.0.2" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.2" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
@@ -34,12 +39,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Autenticacion.Api.Aplicacion.Interfaces\Autenticacion.Api.Aplicacion.Interfaces.csproj" />
-	  <ProjectReference Include="..\Autenticacion.Api.Aplicacion.Servicios\Autenticacion.Api.Aplicacion.Servicios.csproj" />
-	  <ProjectReference Include="..\Autenticacion.Api.Aplicacion.Validador\Autenticacion.Api.Aplicacion.Validador.csproj" />
-	  <ProjectReference Include="..\Autenticacion.Api.Dominio.Repositorios\Autenticacion.Api.Infraestructura.Repositorios.csproj" />
-	  <ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Infraestructura.Interfaces.csproj" />
-	  <ProjectReference Include="..\utenticacion.Api.Transversal.Modelos\Autenticacion.Api.Transversal.Modelos.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Aplicacion.Interfaces\Autenticacion.Api.Aplicacion.Interfaces.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Aplicacion.Servicios\Autenticacion.Api.Aplicacion.Servicios.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Aplicacion.Validador\Autenticacion.Api.Aplicacion.Validador.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Dominio.Repositorios\Autenticacion.Api.Infraestructura.Repositorios.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Infraestructura.Interfaces.csproj" />
+		<ProjectReference Include="..\utenticacion.Api.Transversal.Modelos\Autenticacion.Api.Transversal.Modelos.csproj" />
 	</ItemGroup>
 
 </Project>
