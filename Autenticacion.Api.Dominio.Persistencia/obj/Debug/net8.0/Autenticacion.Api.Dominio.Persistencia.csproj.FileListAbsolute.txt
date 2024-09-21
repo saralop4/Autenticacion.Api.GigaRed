@@ -1,0 +1,14 @@
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\bin\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\bin\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\bin\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\bin\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\refint\Autenticacion.Api.Dominio.Persistencia.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.genruntimeconfig.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Persistencia\obj\Debug\net8.0\ref\Autenticacion.Api.Dominio.Persistencia.dll

@@ -1,0 +1,14 @@
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\refint\Autenticacion.Api.Transversal.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Transversal.Interfaces.genruntimeconfig.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Transversal.Interfaces\obj\Debug\net8.0\ref\Autenticacion.Api.Transversal.Interfaces.dll

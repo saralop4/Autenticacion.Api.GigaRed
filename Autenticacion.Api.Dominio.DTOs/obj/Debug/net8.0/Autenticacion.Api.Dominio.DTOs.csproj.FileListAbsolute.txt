@@ -1,0 +1,14 @@
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\bin\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\bin\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\bin\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\bin\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\refint\Autenticacion.Api.Dominio.DTOs.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\Autenticacion.Api.Dominio.DTOs.genruntimeconfig.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.DTOs\obj\Debug\net8.0\ref\Autenticacion.Api.Dominio.DTOs.dll

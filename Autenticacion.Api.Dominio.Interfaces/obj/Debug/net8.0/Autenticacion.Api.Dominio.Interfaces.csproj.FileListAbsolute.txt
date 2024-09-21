@@ -1,0 +1,14 @@
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\bin\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\refint\Autenticacion.Api.Dominio.Interfaces.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\Autenticacion.Api.Dominio.Interfaces.genruntimeconfig.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Interfaces\obj\Debug\net8.0\ref\Autenticacion.Api.Dominio.Interfaces.dll

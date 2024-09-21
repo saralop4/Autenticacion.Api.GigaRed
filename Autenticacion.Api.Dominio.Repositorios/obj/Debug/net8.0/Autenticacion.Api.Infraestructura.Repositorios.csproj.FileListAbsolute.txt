@@ -1,0 +1,14 @@
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\bin\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\bin\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\bin\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\bin\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\refint\Autenticacion.Api.Infraestructura.Repositorios.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.pdb
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\Autenticacion.Api.Infraestructura.Repositorios.genruntimeconfig.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api.Dominio.Repositorios\obj\Debug\net8.0\ref\Autenticacion.Api.Infraestructura.Repositorios.dll
