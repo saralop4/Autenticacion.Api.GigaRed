@@ -137,3 +137,14 @@ C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.pdb
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.genruntimeconfig.cache
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api\Autenticacion.Api\obj\Debug\net8.0\ref\Autenticacion.Api.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.csproj.AssemblyReference.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.AssemblyInfoInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.AssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.csproj.CoreCompileInputs.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.sourcelink.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\refint\Autenticacion.Api.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.pdb

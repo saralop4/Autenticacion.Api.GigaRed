@@ -9,7 +9,7 @@ namespace Autenticacion.Api.Modules.Feature
         {
 
         
-            string MyPolicy = "policyApiEcommerce";
+            string MyPolicy = "policyApi";
 
 
             services.AddCors(options => options.AddPolicy(MyPolicy, builder => builder.WithOrigins(configuration["Config:OriginsCors"]) //originis  permitidos con la key OriginsCors

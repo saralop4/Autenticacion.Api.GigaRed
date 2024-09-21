@@ -1,4 +1,7 @@
-﻿
+﻿using Autenticacion.Api.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Autenticacion.Api.Modules.Authentication
     {

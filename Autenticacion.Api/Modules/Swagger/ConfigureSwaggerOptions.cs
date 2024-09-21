@@ -1,4 +1,9 @@
 ﻿
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
 namespace Autenticacion.Api.Modules.Swagger
 
 {
@@ -41,7 +46,7 @@ namespace Autenticacion.Api.Modules.Swagger
                 },
                 License = new OpenApiLicense
                 {
-                    Name = "Sisma Corporation",
+                    Name = "Giga Red Connection Col",
                     Url = new Uri("https://example.com/license")
                 }
             };
