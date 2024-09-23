@@ -10,17 +10,9 @@
 
         public string Correo { get; set; } = null!;
 
-        public string? Contraseña { get; set; }
-
-        public bool? EstadoEliminado { get; set; }
-
-        public string UsuarioQueRegistra { get; set; } = null!;
+        public string Contraseña { get; set; } = null!;
 
         public string? UsuarioQueActualiza { get; set; }
-
-        public DateOnly FechaDeRegistro { get; set; }
-
-        public TimeOnly? HoraDeRegistro { get; set; }
 
         public string IpDeRegistro { get; set; } = null!;
 
@@ -30,9 +22,9 @@
 
         public string? IpDeActualizado { get; set; }
 
-       // public virtual Persona IdPersonaNavigation { get; set; } = null!;
+        // public virtual Persona IdPersonaNavigation { get; set; } = null!;
 
-    //    public virtual Role IdRolNavigation { get; set; } = null!;
+        //    public virtual Role IdRolNavigation { get; set; } = null!;
 
     }
 }

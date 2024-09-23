@@ -1,4 +1,4 @@
-﻿using Autenticacion.Api.Helpers;
+﻿using Autenticacion.Api.Transversal.Modelos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;

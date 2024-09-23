@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
+﻿namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
 public partial class Role
 {
