@@ -1,4 +1,4 @@
-﻿namespace Autenticacion.Api.Helpers
+﻿namespace Autenticacion.Api.Transversal.Modelos
 {
     public class AppSettings
     {

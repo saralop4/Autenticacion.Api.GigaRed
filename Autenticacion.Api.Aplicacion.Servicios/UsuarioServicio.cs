@@ -1,13 +1,13 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
-using Autenticacion.Api.Aplicacion.Validador;
+using Autenticacion.Api.Dominio.Validador;
 using Autenticacion.Api.Dominio.DTOs;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.Extensions.Configuration;
 using System.Text;
+using Microsoft.Extensions.Options;
 
 namespace Autenticacion.Api.Aplicacion.Servicios
 {
@@ -15,15 +15,13 @@ namespace Autenticacion.Api.Aplicacion.Servicios
     {
         private readonly IUsuarioRepositorio _UsuarioRepositorio;
         private readonly IniciarSesionDtoValidador _IniciarSesionDtoValidador;
-        private readonly double _jwtExpirationMinutes;
-        private readonly IConfiguration _configuration;
+        private readonly AppSettings _appSettings;
 
-        public UsuarioServicio(IConfiguration configuracion,IUsuarioRepositorio UsuarioRepositorio, IniciarSesionDtoValidador IniciarSesionDtoValidador)
+        public UsuarioServicio(IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio, IniciarSesionDtoValidador IniciarSesionDtoValidador)
         {
-            _configuration = configuracion;
+            _appSettings = appSettings.Value;
             _UsuarioRepositorio = UsuarioRepositorio;
             _IniciarSesionDtoValidador = IniciarSesionDtoValidador;
-            _jwtExpirationMinutes = 7 * 24 * 60; // 7 días en minutos
         }
 
         public Task<Response<bool>> ActualizarUsuario(UsuarioDto UsuarioDto)
@@ -77,9 +75,27 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             throw new NotImplementedException();
         }
 
-        public Task<Response<bool>> GuardarUsuario(UsuarioDto UsuarioDto)
+        public async Task<Response<bool>> GuardarUsuario(UsuarioDto UsuarioDto)
         {
-            throw new NotImplementedException();
+            var response = new Response<bool>();
+
+            try
+            {
+                //var Usuario = _mapper.Map<Usuario>(UsuarioDto);
+
+                response.Data = await _UsuarioRepositorio.Guardar(UsuarioDto);
+                if (response.Data)
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro Exitoso!!";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+
+            }
+            return response;
         }
 
         public Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina)
@@ -102,10 +118,10 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             var tokenHandler = new JwtSecurityTokenHandler();
 
             // Clave para firmar el token
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Secret));
 
             // Clave para cifrar la carga útil
-            var encryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:EncryptionKey"]));
+         //   var encryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:EncryptionKey"]));
 
             var claims = new List<Claim>
             {
@@ -116,9 +132,11 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(_jwtExpirationMinutes), //con valor de 15 dura un minuto
+                Expires = DateTime.UtcNow.AddMinutes(15), 
                 SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature),
-                EncryptingCredentials = new EncryptingCredentials(encryptionKey, SecurityAlgorithms.Aes256KW, SecurityAlgorithms.Aes256CbcHmacSha512)
+                Issuer = _appSettings.Issuer,
+                Audience = _appSettings.Audience
+                // EncryptingCredentials = new EncryptingCredentials(encryptionKey, SecurityAlgorithms.Aes256KW, SecurityAlgorithms.Aes256CbcHmacSha512)
             };
 
             try

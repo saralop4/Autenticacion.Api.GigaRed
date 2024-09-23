@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KrFci/HG/yE=",
+  "dgSpecHash": "U0laUjz1Mw0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,8 @@
     "C:\\Users\\Sarah\\.nuget\\packages\\aspnetcore.healthchecks.ui.inmemory.storage\\8.0.1\\aspnetcore.healthchecks.ui.inmemory.storage.8.0.1.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Sarah\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
+    "C:\\Users\\Sarah\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.10.0\\fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\fractions\\7.3.0\\fractions.7.3.0.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\identitymodel\\5.2.0\\identitymodel.5.2.0.nupkg.sha512",

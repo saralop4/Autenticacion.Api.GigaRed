@@ -1,7 +1,8 @@
 ﻿using Autenticacion.Api.Dominio.DTOs;
 using FluentValidation;
 
-namespace Autenticacion.Api.Aplicacion.Validador
+
+namespace Autenticacion.Api.Dominio.Validador
 {
     public class IniciarSesionDtoValidador : AbstractValidator<IniciarSesionDto>
     {

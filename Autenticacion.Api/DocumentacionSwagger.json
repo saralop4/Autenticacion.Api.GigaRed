@@ -10,7 +10,7 @@
       "email": "saralopezjb16@gmail.com"
     },
     "license": {
-      "name": "Sisma Corporation",
+      "name": "Giga Red Connection",
       "url": "https://example.com/license"
     },
     "version": "1.0"
@@ -268,10 +268,10 @@
         }
       }
     },
-    "/api/v1/Users/Authenticate": {
+    "/Api/V1/Usuarios/Autenticacion": {
       "post": {
         "tags": [
-          "Users"
+          "Usuarios"
         ],
         "requestBody": {
           "content": {

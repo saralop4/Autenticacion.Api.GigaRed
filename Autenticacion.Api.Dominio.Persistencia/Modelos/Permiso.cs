@@ -1,16 +1,12 @@
 ﻿namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
-public partial class Usuario
+public partial class Permiso
 {
-    public long IdUsuario { get; set; }
+    public long IdPermiso { get; set; }
+
+    public long IdMenuPagina { get; set; }
 
     public long IdRol { get; set; }
-
-    public long IdPersona { get; set; }
-
-    public string Correo { get; set; } = null!;
-
-    public string Contraseña { get; set; } = null!;
 
     public bool? EstadoEliminado { get; set; }
 
@@ -30,7 +26,5 @@ public partial class Usuario
 
     public string? IpDeActualizado { get; set; }
 
- //   public virtual Persona IdPersonaNavigation { get; set; } = null!;
-
- //   public virtual Role IdRolNavigation { get; set; } = null!;
+    public virtual MenuPagina IdMenuPaginaNavigation { get; set; } = null!;
 }

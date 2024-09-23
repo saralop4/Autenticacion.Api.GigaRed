@@ -12,6 +12,9 @@
           "AspNetCore.HealthChecks.UI": "8.0.2",
           "AspNetCore.HealthChecks.UI.Client": "8.0.1",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
+          "Autenticacion.Api.Dominio.DTOs": "1.0.0",
+          "FluentValidation": "11.10.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.10.0",
           "MSTest.TestAdapter": "3.6.0",
           "MSTest.TestFramework": "3.6.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -138,6 +141,26 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.10.3.0",
             "fileVersion": "1.1000.323.51804"
+          }
+        }
+      },
+      "FluentValidation/11.10.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.10.0.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.10.0": {
+        "dependencies": {
+          "FluentValidation": "11.10.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.10.0.0"
           }
         }
       },
@@ -1660,6 +1683,33 @@
           }
         }
       },
+      "Autenticacion.Api.Dominio.DTOs/1.0.0": {
+        "dependencies": {
+          "AspNetCore.HealthChecks.SqlServer": "8.0.2",
+          "AspNetCore.HealthChecks.UI": "8.0.2",
+          "AspNetCore.HealthChecks.UI.Client": "8.0.1",
+          "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
+          "MSTest.TestAdapter": "3.6.0",
+          "MSTest.TestFramework": "3.6.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.NET.Test.Sdk": "17.11.1",
+          "Swashbuckle.AspNetCore.Swagger": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.3",
+          "System.Text.Json": "8.0.4"
+        },
+        "runtime": {
+          "Autenticacion.Api.Dominio.DTOs.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {
         "runtime": {
           "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {
@@ -1731,6 +1781,20 @@
       "sha512": "sha512-l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==",
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
+    },
+    "FluentValidation/11.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qsJGSJDdZ8qiG+lVJ70PZfJHcEdq8UQZ/tZDXoj78/iHKG6lVKtMJsD11zyyv/IPc7rwqGqnFoFLTNzpo3IPYg==",
+      "path": "fluentvalidation/11.10.0",
+      "hashPath": "fluentvalidation.11.10.0.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hIe+i6P+ZUxFh6lJOBXRs4EGE/thcub0Lpdk2FF2/JBKJUqDqE2xDnBIiqTMkpXLoekgBN0SlhJT0vpeNr1J6g==",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.10.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512"
     },
     "Fractions/7.3.0": {
       "type": "package",
@@ -2466,6 +2530,11 @@
       "sha512": "sha512-fXrqmKkzBtXeJiHEsZOPEWkonHweiwk/l0Hqhz4yMIZPh57kZy03Xbj2/e8HV1QIkTw7yeBe9bbphuE3YiI4vQ==",
       "path": "yamldotnet/15.1.0",
       "hashPath": "yamldotnet.15.1.0.nupkg.sha512"
+    },
+    "Autenticacion.Api.Dominio.DTOs/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {
       "type": "reference",
