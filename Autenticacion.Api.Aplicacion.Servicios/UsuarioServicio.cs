@@ -1,13 +1,13 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
-using Autenticacion.Api.Dominio.Validador;
 using Autenticacion.Api.Dominio.DTOs;
+using Autenticacion.Api.Dominio.Validador;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Options;
 
 namespace Autenticacion.Api.Aplicacion.Servicios
 {
@@ -44,16 +44,20 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             try
             {
                 var usuarioValidado = await _UsuarioRepositorio.UsuarioAutenticado(IniciarSesionDto);
-        
-                if (usuarioValidado is { })
+
+                if (usuarioValidado is {}) //si usuarioValidado no es nulo
                 {
                     string token =  GenerateJwtToken(usuarioValidado.IdUsuario, usuarioValidado.Correo);
-
                     TokenDto TokenDto = new TokenDto{ Token= token};
                     
                     response.Data = TokenDto; 
                     response.IsSuccess = true;
                     response.Message = "Autenticacion Exitosa";
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = "Usuario no existe";
                 }
 
             }

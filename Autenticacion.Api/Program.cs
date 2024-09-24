@@ -5,7 +5,6 @@ using Autenticacion.Api.Modules.Swagger;
 using Autenticacion.Api.Modules.Validator;
 using Autenticacion.Api.Modules.Versioning;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Newtonsoft.Json.Serialization;
 
 namespace Autenticacion.Api
 {
@@ -16,14 +15,13 @@ namespace Autenticacion.Api
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddControllers()
-             .AddNewtonsoftJson(options =>
-             {
-                 options.SerializerSettings.ContractResolver = new DefaultContractResolver
-                 {
-                     NamingStrategy = null // Esto asegura Pascal Case
-                 };
-             });
+
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+            });
+
+
 
             builder.Services.AddVersioning();
             builder.Services.AddAuthentication(builder.Configuration);
