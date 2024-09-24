@@ -1,11 +1,9 @@
 ﻿using Autenticacion.Api.Dominio.DTOs;
+using Autenticacion.Api.Dominio.Persistencia;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
-using Ecommerce.Infraestructura.Data;
 using Microsoft.Extensions.Configuration;
 using System.Data;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace Autenticacion.Api.Dominio.Repositorios
 {
@@ -47,7 +45,8 @@ namespace Autenticacion.Api.Dominio.Repositorios
                 parameters.Add("IdPersona", Modelo.IdPersona);
                 parameters.Add("Correo", Modelo.Correo);
                 parameters.Add("Contraseña", contraseñaEncriptada);
-                parameters.Add("IpRegistro", Modelo.IpDeRegistro);
+                parameters.Add("UsuarioQueRegistra", Modelo.UsuarioQueRegistra);
+                parameters.Add("IpDeRegistro", Modelo.IpDeRegistro);
 
                 var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
                 //el metodo execute permite invocar un procedimiento almacenado y enviarle los parametros
@@ -72,10 +71,10 @@ namespace Autenticacion.Api.Dominio.Repositorios
             throw new NotImplementedException();
         }
 
-        public async Task<UsuarioDto> UsuarioAutenticado(IniciarSesionDto iniciarSesionDto)
+        public async Task<UsuarioDto> UsuarioAutenticado(IniciarSesionDto IniciarSesionDto)
         {
-            if (iniciarSesionDto == null)
-                throw new ArgumentNullException(nameof(iniciarSesionDto));
+            if (IniciarSesionDto == null)
+                throw new ArgumentNullException(nameof(IniciarSesionDto));
 
             try
             {
@@ -83,8 +82,8 @@ namespace Autenticacion.Api.Dominio.Repositorios
                 {
                     var query = "ObtenerUsuarioAutenticado";
                     var parameters = new DynamicParameters();
-                    parameters.Add("Correo", iniciarSesionDto.Correo);
-                    parameters.Add("Contraseña", iniciarSesionDto.Contraseña);
+                    parameters.Add("Correo", IniciarSesionDto.Correo);
+                    parameters.Add("Contraseña", IniciarSesionDto.Contraseña);
 
                     var usuario = await connection.QuerySingleOrDefaultAsync<UsuarioDto>(
                         query,
@@ -93,7 +92,7 @@ namespace Autenticacion.Api.Dominio.Repositorios
                     );
 
                     // Verificar si el usuario fue encontrado y si la contraseña es válida
-                    if (usuario != null && BCrypt.Net.BCrypt.Verify(iniciarSesionDto.Contraseña, usuario.Contraseña))
+                    if (usuario != null && BCrypt.Net.BCrypt.Verify(IniciarSesionDto.Contraseña, usuario.Contraseña))
                     {
                         return usuario;
                     }
@@ -108,20 +107,6 @@ namespace Autenticacion.Api.Dominio.Repositorios
             }
         }
 
-        private string GetMd5Hash(string Dato)
-        {
-            using (MD5 md5 = MD5.Create())
-            {
-                byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(Dato));
-                StringBuilder sBuilder = new StringBuilder();
-
-                for (int i = 0; i < data.Length; i++)
-                {
-                    sBuilder.Append(data[i].ToString("x2"));
-                }
-
-                return sBuilder.ToString();
-            }
-        }
+      
     }
 }

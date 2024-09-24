@@ -171,7 +171,6 @@ C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autentica
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.Dominio.Persistencia.runtimeconfig.json
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\testhost.exe
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\appsettings.json
-C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\DocumentacionSwagger.json
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.staticwebassets.endpoints.json
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -491,3 +490,15 @@ C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autentica
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autentic.C3DC7D94.Up2Date
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\Autenticacion.Api.genruntimeconfig.cache
 C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\obj\Debug\net8.0\ref\Autenticacion.Api.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.Dominio.Validadores.deps.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.Dominio.Validadores.runtimeconfig.json
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.Dominio.Validadores.dll
+C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Api.GigaRed\Autenticacion.Api\bin\Debug\net8.0\Autenticacion.Api.Dominio.Validadores.pdb

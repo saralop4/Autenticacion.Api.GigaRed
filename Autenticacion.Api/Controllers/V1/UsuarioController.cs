@@ -1,8 +1,6 @@
-﻿using Autenticacion.Api.Aplicacion.Servicios;
+﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Dominio.DTOs;
-using Humanizer;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 
 namespace Autenticacion.Api.Controllers.V1
 {
@@ -12,10 +10,10 @@ namespace Autenticacion.Api.Controllers.V1
     [ApiVersion("1.0")] 
     public class UsuarioController : ControllerBase
     {
-        private readonly UsuarioServicio _UsuarioServicio;  
-        public UsuarioController(UsuarioServicio UsuarioServicio) 
+        private readonly IUsuarioServicio _IUsuarioServicio;  
+        public UsuarioController(IUsuarioServicio UsuarioServicio) 
         {
-            _UsuarioServicio = UsuarioServicio;
+            _IUsuarioServicio = UsuarioServicio;
         }
 
 
@@ -26,7 +24,7 @@ namespace Autenticacion.Api.Controllers.V1
             {
                 return BadRequest();
             }
-                var response = await _UsuarioServicio.AutenticarUsuario(dto);
+                var response = await _IUsuarioServicio.AutenticarUsuario(dto);
                 if (response.IsSuccess)
                 {
                     return Ok(response);
@@ -35,13 +33,13 @@ namespace Autenticacion.Api.Controllers.V1
         }
 
         [HttpPost("RegistrarUsuario")]
-        public async Task<IActionResult> InsertAsync([FromBody] UsuarioDto UsuarioDto)
+        public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioDto UsuarioDto)
         {
             if (UsuarioDto == null)
             {
                 return BadRequest();
             }
-            var response = await _UsuarioServicio.GuardarUsuario(UsuarioDto);
+            var response = await _IUsuarioServicio.GuardarUsuario(UsuarioDto);
 
             if (response.IsSuccess)
             {

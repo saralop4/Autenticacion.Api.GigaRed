@@ -3,7 +3,7 @@ using Autenticacion.Api.Transversal.Modelos;
 
 namespace Autenticacion.Api.Aplicacion.Interfaces
 {
-    public interface IUsuario
+    public interface IUsuarioServicio
     {
         #region Metodos Asincronos
 
