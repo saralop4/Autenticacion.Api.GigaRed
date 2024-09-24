@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+
 namespace Autenticacion.Api.Modules.Authentication
-    {
+{
     public static class AuthenticationExtensions
     {
         public static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)

@@ -7810,6 +7810,7 @@
       "Microsoft.Extensions.Configuration >= 8.0.0",
       "Microsoft.NET.Test.Sdk >= 17.11.1",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.21.0",
+      "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.7.3",
       "Swashbuckle.AspNetCore.Swagger >= 6.7.3",
       "Swashbuckle.AspNetCore.SwaggerGen >= 6.7.3",
@@ -7951,6 +7952,10 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
             "version": "[1.21.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

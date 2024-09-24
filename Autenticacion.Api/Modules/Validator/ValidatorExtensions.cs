@@ -1,5 +1,4 @@
-﻿
-using Autenticacion.Api.Aplicacion.Validador;
+﻿using Autenticacion.Api.Dominio.Validador;
 
 namespace Autenticacion.Api.Modules.Validator
 

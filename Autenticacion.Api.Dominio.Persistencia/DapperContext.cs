@@ -2,17 +2,19 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Ecommerce.Infraestructura.Data
+namespace Autenticacion.Api.Dominio.Persistencia
 {
-    public class DapperContext : IDisposable
+    public class DapperContext 
     {
         private readonly string _connectionString;
+        private readonly IConfiguration _configuration;
         private IDbConnection _connection;
         private bool _disposed = false; // Para evitar liberar varias veces
 
         public DapperContext(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("ConnectionStrings")
+            _configuration = configuration;
+            _connectionString = configuration.GetConnectionString("Dev")
                                 ?? throw new ArgumentNullException(nameof(_connectionString), "La cadena de conexión no puede ser nula o vacía.");
         }
 

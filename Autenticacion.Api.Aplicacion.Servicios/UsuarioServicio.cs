@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 
 namespace Autenticacion.Api.Aplicacion.Servicios
 {
-    public class UsuarioServicio : IUsuario
+    public class UsuarioServicio : IUsuarioServicio
     {
         private readonly IUsuarioRepositorio _UsuarioRepositorio;
         private readonly IniciarSesionDtoValidador _IniciarSesionDtoValidador;

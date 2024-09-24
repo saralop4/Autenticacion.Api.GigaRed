@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Reflection;
+
 
 namespace Autenticacion.Api.Modules.Swagger
 
@@ -15,9 +15,6 @@ namespace Autenticacion.Api.Modules.Swagger
 
             services.AddSwaggerGen(c =>
             {
-                var XmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, XmlFile);
-                c.IncludeXmlComments(xmlPath);
 
                 var securityScheme = new OpenApiSecurityScheme
                 {

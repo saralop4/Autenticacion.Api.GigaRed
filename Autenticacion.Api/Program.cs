@@ -1,13 +1,11 @@
 using Autenticacion.Api.Modules.Authentication;
 using Autenticacion.Api.Modules.Feature;
-using Autenticacion.Api.Modules.HealthChecks;
 using Autenticacion.Api.Modules.Injection;
-using Autenticacion.Api.Modules.Mapper;
 using Autenticacion.Api.Modules.Swagger;
 using Autenticacion.Api.Modules.Validator;
 using Autenticacion.Api.Modules.Versioning;
-using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Newtonsoft.Json.Serialization;
 
 namespace Autenticacion.Api
 {
@@ -18,17 +16,21 @@ namespace Autenticacion.Api
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddControllers().AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver();
-            });
+            builder.Services.AddControllers()
+             .AddNewtonsoftJson(options =>
+             {
+                 options.SerializerSettings.ContractResolver = new DefaultContractResolver
+                 {
+                     NamingStrategy = null // Esto asegura Pascal Case
+                 };
+             });
 
             builder.Services.AddVersioning();
             builder.Services.AddAuthentication(builder.Configuration);
-            builder.Services.AddMapper();
+          //  builder.Services.AddMapper();
             builder.Services.AddFeature(builder.Configuration);
             builder.Services.AddValidator();
-            builder.Services.AddHealthCheck(builder.Configuration);
+          //  builder.Services.AddHealthCheck(builder.Configuration);
             builder.Services.AddInjection(builder.Configuration);
             builder.Services.AddSwaggerDocumentation();
 
@@ -53,12 +55,12 @@ namespace Autenticacion.Api
             app.UseAuthorization();
             app.MapControllers();
 
-            app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+        /*    app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
             {
                 Predicate = _ => true,
                 ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
             });
-
+        */
             app.Run();
         }
     }
