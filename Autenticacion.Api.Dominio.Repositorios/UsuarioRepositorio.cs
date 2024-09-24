@@ -3,6 +3,7 @@ using Autenticacion.Api.Dominio.Persistencia;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System.Data;
 
 namespace Autenticacion.Api.Dominio.Repositorios
@@ -73,17 +74,17 @@ namespace Autenticacion.Api.Dominio.Repositorios
 
         public async Task<UsuarioDto> UsuarioAutenticado(IniciarSesionDto IniciarSesionDto)
         {
+
             if (IniciarSesionDto == null)
                 throw new ArgumentNullException(nameof(IniciarSesionDto));
-
             try
             {
+
                 using (var connection = _context.CreateConnection())
                 {
                     var query = "ObtenerUsuarioAutenticado";
                     var parameters = new DynamicParameters();
                     parameters.Add("Correo", IniciarSesionDto.Correo);
-                    parameters.Add("Contraseña", IniciarSesionDto.Contraseña);
 
                     var usuario = await connection.QuerySingleOrDefaultAsync<UsuarioDto>(
                         query,
@@ -97,7 +98,6 @@ namespace Autenticacion.Api.Dominio.Repositorios
                         return usuario;
                     }
 
-                    // Si la autenticación falla, devuelve null o lanza una excepción según tu lógica
                     return null;
                 }
             }

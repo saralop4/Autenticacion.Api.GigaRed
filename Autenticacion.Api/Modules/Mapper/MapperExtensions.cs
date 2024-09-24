@@ -1,5 +1,4 @@
-﻿
-using Autenticacion.Api.Transversal.Modelos;
+﻿using Autenticacion.Api.Transversal.Modelos;
 using AutoMapper;
 
 namespace Autenticacion.Api.Modules.Mapper

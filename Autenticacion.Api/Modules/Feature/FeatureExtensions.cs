@@ -1,6 +1,4 @@
-﻿
-
-namespace Autenticacion.Api.Modules.Feature
+﻿namespace Autenticacion.Api.Modules.Feature
 {
     public static class FeatureExtensions
     {

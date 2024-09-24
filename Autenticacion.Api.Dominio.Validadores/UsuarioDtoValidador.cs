@@ -2,12 +2,13 @@
 using FluentValidation;
 using System.Text.RegularExpressions;
 
-namespace Autenticacion.Api.Dominio.Validador
+namespace Autenticacion.Api.Dominio.Validadores
 {
-    public class IniciarSesionDtoValidador : AbstractValidator<IniciarSesionDto>
+    public class UsuarioDtoValidador : AbstractValidator<UsuarioDto>
     {
-        public IniciarSesionDtoValidador()
+        public UsuarioDtoValidador()
         {
+
             RuleFor(u => u.Correo)
                 .NotEmpty().WithMessage("El correo es obligatorio.")
                 .NotNull().WithMessage("El correo no puede ser nulo.")
@@ -24,5 +25,6 @@ namespace Autenticacion.Api.Dominio.Validador
             var CorreoValido = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(Correo, CorreoValido);
         }
+
     }
 }

@@ -20,16 +20,14 @@ namespace Autenticacion.Api.Controllers.V1
         [HttpPost("IniciarSesion")]
         public async Task<IActionResult> IniciarSesion([FromBody] IniciarSesionDto dto)
         {
-            if (dto is not { })
-            {
-                return BadRequest();
-            }
                 var response = await _IUsuarioServicio.AutenticarUsuario(dto);
+
                 if (response.IsSuccess)
                 {
                     return Ok(response);
                 }
-                return BadRequest(response.Message);
+                     return BadRequest(response);
+
         }
 
         [HttpPost("RegistrarUsuario")]
