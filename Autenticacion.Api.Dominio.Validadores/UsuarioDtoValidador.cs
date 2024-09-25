@@ -8,6 +8,9 @@ namespace Autenticacion.Api.Dominio.Validadores
     {
         public UsuarioDtoValidador()
         {
+            RuleFor(u => u.IdPersona)
+               .NotEmpty().WithMessage("Debe proporcionar el id de la persona")
+               .NotNull().WithMessage("El id de la persona no puede ser nula.");
 
             RuleFor(u => u.Correo)
                 .NotEmpty().WithMessage("El correo es obligatorio.")
@@ -17,6 +20,12 @@ namespace Autenticacion.Api.Dominio.Validadores
             RuleFor(u => u.Contraseña)
                 .NotEmpty().WithMessage("La contraseña es obligatoria.")
                 .NotNull().WithMessage("La contraseña no puede ser nula.");
+
+            RuleFor(u => u.UsuarioQueRegistra)
+               .NotEmpty().WithMessage("El usuario que registra es obligatorio.")
+               .NotNull().WithMessage("El usuario que registra  no puede ser nulo.")
+               .Must(BeAValidEmail).WithMessage("El usuario que registra debe tener un formato. (ejemplo@dominio.com)");
+
         }
 
         private bool BeAValidEmail(string Correo)

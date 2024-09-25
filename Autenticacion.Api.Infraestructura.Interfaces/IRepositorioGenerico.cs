@@ -5,7 +5,7 @@
         #region Metodos Asincronos
         Task<bool> Guardar(T Modelo);
         Task<bool> Actualizar(T Modelo);
-        Task<bool> Eliminar(string Id);
+        Task<bool> Eliminar(long Id);
         Task<T> Obtener(string Id);
         Task<IEnumerable<T>> ObtenerTodo();
         Task<IEnumerable<T>> ObtenerTodoConPaginacion(int NumeroDePagina, int TamañoPagina);

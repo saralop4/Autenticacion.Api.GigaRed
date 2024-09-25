@@ -1,6 +1,7 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Dominio.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Autenticacion.Api.Controllers.V1
 {
@@ -31,22 +32,33 @@ namespace Autenticacion.Api.Controllers.V1
         }
 
         [HttpPost("RegistrarUsuario")]
-        public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioDto UsuarioDto)
+        public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioDto usuarioDto)
         {
-            if (UsuarioDto == null)
+            if (usuarioDto == null)
             {
-                return BadRequest();
+                return BadRequest(new { Message = "Datos de usuario no válidos." });
             }
-            var response = await _IUsuarioServicio.GuardarUsuario(UsuarioDto);
+
+            // Obtener la IP
+            var ipDeRegistro = HttpContext.Connection.RemoteIpAddress?.ToString();
+
+            if (ipDeRegistro != null)
+            {
+                usuarioDto.IpDeRegistro = ipDeRegistro;
+            }
+
+           // Console.WriteLine(JsonConvert.SerializeObject(usuarioDto));
+
+            var response = await _IUsuarioServicio.RegistrarUsuario(usuarioDto);
 
             if (response.IsSuccess)
             {
                 return Ok(response);
             }
-            return BadRequest(response.Message);
 
-
+            return BadRequest(new { response.Message });
         }
+
     }
 
 }

@@ -2,7 +2,7 @@
 using FluentValidation;
 using System.Text.RegularExpressions;
 
-namespace Autenticacion.Api.Dominio.Validador
+namespace Autenticacion.Api.Dominio.Validadores
 {
     public class IniciarSesionDtoValidador : AbstractValidator<IniciarSesionDto>
     {

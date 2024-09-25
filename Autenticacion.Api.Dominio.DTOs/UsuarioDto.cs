@@ -9,7 +9,7 @@ namespace Autenticacion.Api.Dominio.DTOs
         public long IdUsuario { get; set; }
 
         [JsonPropertyName("IdRol")]
-        public long IdRol { get; set; }
+        public long IdRol { get; set; } = 1;
 
         [JsonPropertyName("IdPersona")]
         public long IdPersona { get; set; }
@@ -21,7 +21,7 @@ namespace Autenticacion.Api.Dominio.DTOs
         public string Contraseña { get; set; } = null!;
 
         [JsonPropertyName("EstadoEliminado")]
-        public bool? EstadoEliminado { get; set; }
+        public bool? EstadoEliminado { get; set; } = false;
 
         [JsonPropertyName("UsuarioQueRegistra")]
         public string UsuarioQueRegistra { get; set; } = null!;
@@ -37,16 +37,18 @@ namespace Autenticacion.Api.Dominio.DTOs
         [JsonPropertyName("HoraDeRegistro")]
         public TimeSpan HoraDeRegistro { get; set; }
 
+        [JsonIgnore]
         [JsonPropertyName("IpDeRegistro")]
-        public string IpDeRegistro { get; set; } = null!;
+        public string? IpDeRegistro { get; set; } = null;
 
         [JsonPropertyName("FechaDeActualizado")]
-        public DateTime? FechaDeActualizado { get; set; }
+        public DateTime? FechaDeActualizado { get; set; } = null;
 
         [JsonPropertyName("HoraDeActualizado")]
-        public TimeSpan? HoraDeActualizado { get; set; }
+        public TimeSpan? HoraDeActualizado { get; set; } = null;
 
+        [JsonIgnore]
         [JsonPropertyName("IpDeActualizado")]
-        public string? IpDeActualizado { get; set; }
+        public string? IpDeActualizado { get; set; }= null;
     }
 }

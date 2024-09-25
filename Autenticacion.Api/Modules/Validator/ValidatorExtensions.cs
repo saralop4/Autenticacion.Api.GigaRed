@@ -1,4 +1,4 @@
-﻿using Autenticacion.Api.Dominio.Validador;
+﻿using Autenticacion.Api.Dominio.Validadores;
 
 namespace Autenticacion.Api.Modules.Validator
 
@@ -9,6 +9,7 @@ namespace Autenticacion.Api.Modules.Validator
         public static IServiceCollection AddValidator(this IServiceCollection services) 
         { 
             services.AddTransient<IniciarSesionDtoValidador>(); //crea una instancia por cada peticion
+            services.AddTransient<UsuarioDtoValidador>();
             return services;    
         }
     }
