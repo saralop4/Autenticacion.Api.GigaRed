@@ -3,6 +3,7 @@ using Autenticacion.Api.Dominio.DTOs;
 using Autenticacion.Api.Dominio.Validadores;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
+using FluentValidation;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -96,8 +97,11 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
                 if (!validation.IsValid)
                 {
+                    response.IsSuccess = false;
                     response.Message = "Errores de Validacion";
                     response.Errors = validation.Errors;
+                    return response;
+
                 }
 
 
