@@ -1,10 +1,11 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Dominio.DTOs;
-using Autenticacion.Api.Dominio.Validador;
+using Autenticacion.Api.Dominio.Validadores;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -15,13 +16,16 @@ namespace Autenticacion.Api.Aplicacion.Servicios
     {
         private readonly IUsuarioRepositorio _UsuarioRepositorio;
         private readonly IniciarSesionDtoValidador _IniciarSesionDtoValidador;
+        private readonly UsuarioDtoValidador _UsuarioDtoValidador;
         private readonly AppSettings _appSettings;
 
-        public UsuarioServicio(IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio, IniciarSesionDtoValidador IniciarSesionDtoValidador)
+        public UsuarioServicio(IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio,
+            IniciarSesionDtoValidador IniciarSesionDtoValidador, UsuarioDtoValidador UsuarioDtoValidador)
         {
             _appSettings = appSettings.Value;
             _UsuarioRepositorio = UsuarioRepositorio;
             _IniciarSesionDtoValidador = IniciarSesionDtoValidador;
+            _UsuarioDtoValidador = UsuarioDtoValidador;
         }
 
         public Task<Response<bool>> ActualizarUsuario(UsuarioDto UsuarioDto)
@@ -74,33 +78,55 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             return response;
         }
 
-        public Task<Response<bool>> DeleteUsuario(string UsuarioId)
+        public Task<Response<bool>> DeleteUsuario(long IdUsuario)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Response<bool>> GuardarUsuario(UsuarioDto UsuarioDto)
+        public async Task<Response<bool>> RegistrarUsuario(UsuarioDto UsuarioDto)
         {
             var response = new Response<bool>();
-
-            try
-            {
-                //var Usuario = _mapper.Map<Usuario>(UsuarioDto);
-
-                response.Data = await _UsuarioRepositorio.Guardar(UsuarioDto);
-                if (response.Data)
+                var validation = _UsuarioDtoValidador.Validate(new UsuarioDto()
                 {
-                    response.IsSuccess = true;
-                    response.Message = "Registro Exitoso!!";
-                }
-            }
-            catch (Exception ex)
-            {
-                response.Message = ex.Message;
+                    IdPersona = UsuarioDto.IdPersona,
+                    Correo = UsuarioDto.Correo,
+                    Contraseña = UsuarioDto.Contraseña,
+                    UsuarioQueRegistra = UsuarioDto.UsuarioQueRegistra
+                });
 
-            }
-            return response;
+                if (!validation.IsValid)
+                {
+                    response.Message = "Errores de Validacion";
+                    response.Errors = validation.Errors;
+                }
+
+
+                var usuarioExistente = await ObtenerUsuario(UsuarioDto.Correo);
+
+                if (usuarioExistente.IsSuccess)
+                 {
+                    response.IsSuccess = false;
+                    response.Message = "El Usuario Ya Existe";
+                 }
+                else
+                {
+                    response.Data = await _UsuarioRepositorio.Guardar(UsuarioDto);
+
+                    if (response.Data)
+                    {
+                        response.IsSuccess = true;
+                        response.Message = "Registro Exitoso!!";
+                    }
+                    else
+                    {
+                        response.IsSuccess = false;
+                        response.Message = "Hubo Error Al Crear El Usuario";
+                    }
+                }
+                    
+                 return response;
         }
+        
 
         public Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina)
         {
@@ -112,20 +138,38 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             throw new NotImplementedException();
         }
 
-        public Task<Response<UsuarioDto>> ObtenerUsuario(string UsuarioId)
+        public async Task<Response<UsuarioDto>> ObtenerUsuario(string Correo)
         {
-            throw new NotImplementedException();
-        }
+            var response = new Response<UsuarioDto>();
 
+            try
+            {
+                var usuarioValidado = await _UsuarioRepositorio.Obtener(Correo);
+
+                if (usuarioValidado is { })
+                {
+                    response.Data = usuarioValidado;
+                    response.IsSuccess = true;
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = "Usuario No Encontrado";
+                }
+             }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+            }
+            return response;
+
+        }
         private string GenerateJwtToken(long IdUsuario, string Correo)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
             // Clave para firmar el token
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Secret));
-
-            // Clave para cifrar la carga útil
-         //   var encryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:EncryptionKey"]));
 
             var claims = new List<Claim>
             {

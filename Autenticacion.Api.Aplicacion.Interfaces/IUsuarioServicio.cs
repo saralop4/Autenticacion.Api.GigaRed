@@ -8,10 +8,10 @@ namespace Autenticacion.Api.Aplicacion.Interfaces
         #region Metodos Asincronos
 
         Task<Response<TokenDto>> AutenticarUsuario(IniciarSesionDto IniciarSesionDto);
-        Task<Response<bool>> GuardarUsuario(UsuarioDto UsuarioDto);
+        Task<Response<bool>> RegistrarUsuario(UsuarioDto UsuarioDto);
         Task<Response<bool>> ActualizarUsuario(UsuarioDto UsuarioDto);
-        Task<Response<bool>> DeleteUsuario(string UsuarioId);
-        Task<Response<UsuarioDto>> ObtenerUsuario(string UsuarioId);
+        Task<Response<bool>> DeleteUsuario(long IdUsuario);
+        Task<Response<UsuarioDto>> ObtenerUsuario(string Correo);
         Task<Response<IEnumerable<UsuarioDto>>> ObtenerTodosLosUsuarios();
         Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina);
 

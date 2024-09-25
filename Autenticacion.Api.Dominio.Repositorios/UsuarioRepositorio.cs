@@ -3,7 +3,6 @@ using Autenticacion.Api.Dominio.Persistencia;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 using System.Data;
 
 namespace Autenticacion.Api.Dominio.Repositorios
@@ -27,7 +26,7 @@ namespace Autenticacion.Api.Dominio.Repositorios
             throw new NotImplementedException();
         }
 
-        public Task<bool> Eliminar(string Id)
+        public Task<bool> Eliminar(long Id)
         {
             throw new NotImplementedException();
         }
@@ -36,12 +35,12 @@ namespace Autenticacion.Api.Dominio.Repositorios
         {
             var contraseñaEncriptada = BCrypt.Net.BCrypt.HashPassword(Modelo.Contraseña);
 
-            using (var connection = _context.CreateConnection()) //el metodo Get devuelve la instancia de conexion abierta
+            using (var conexion = _context.CreateConnection()) 
             {
 
-                var query = "GuardarUsuario"; //nombre del procedimiento almacenado
-                var parameters = new DynamicParameters(); //para el uso de dapper se recomienda el uso de parametros dinamicos
-                                                          //parameters es una lista de parametros
+                var query = "RegistrarUsuario";  //nombre del procedimiento almacenado
+                var parameters = new DynamicParameters(); 
+
                 parameters.Add("IdRol", Modelo.IdRol);
                 parameters.Add("IdPersona", Modelo.IdPersona);
                 parameters.Add("Correo", Modelo.Correo);
@@ -49,17 +48,28 @@ namespace Autenticacion.Api.Dominio.Repositorios
                 parameters.Add("UsuarioQueRegistra", Modelo.UsuarioQueRegistra);
                 parameters.Add("IpDeRegistro", Modelo.IpDeRegistro);
 
-                var result = await connection.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
-                //el metodo execute permite invocar un procedimiento almacenado y enviarle los parametros
+                var result = await conexion.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
+                
                 return result > 0;
 
             }
 
         }
 
-        public Task<UsuarioDto> Obtener(string Id)
+        public async Task<UsuarioDto> Obtener(string Id)
         {
-            throw new NotImplementedException();
+            using (var conexion = _context.CreateConnection()) 
+            {
+
+                var query = "ObtenerUsuarioPorCorreo"; 
+                var parameters = new DynamicParameters(); 
+                parameters.Add("Correo", Id);
+
+
+                var Usuario = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
+
+                return Usuario;
+            }
         }
 
         public Task<IEnumerable<UsuarioDto>> ObtenerTodo()
@@ -80,13 +90,13 @@ namespace Autenticacion.Api.Dominio.Repositorios
             try
             {
 
-                using (var connection = _context.CreateConnection())
+                using (var conexion = _context.CreateConnection())
                 {
                     var query = "ObtenerUsuarioAutenticado";
                     var parameters = new DynamicParameters();
                     parameters.Add("Correo", IniciarSesionDto.Correo);
 
-                    var usuario = await connection.QuerySingleOrDefaultAsync<UsuarioDto>(
+                    var usuario = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(
                         query,
                         param: parameters,
                         commandType: CommandType.StoredProcedure
@@ -98,7 +108,7 @@ namespace Autenticacion.Api.Dominio.Repositorios
                         return usuario;
                     }
 
-                    return null;
+                         return null;
                 }
             }
             catch (Exception ex)
