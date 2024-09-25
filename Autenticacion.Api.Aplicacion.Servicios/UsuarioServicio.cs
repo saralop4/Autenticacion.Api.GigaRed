@@ -85,6 +85,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
         public async Task<Response<bool>> RegistrarUsuario(UsuarioDto UsuarioDto)
         {
             var response = new Response<bool>();
+
                 var validation = _UsuarioDtoValidador.Validate(new UsuarioDto()
                 {
                     IdPersona = UsuarioDto.IdPersona,
@@ -102,7 +103,6 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
                 }
 
-
                 var usuarioExistente = await ObtenerUsuario(UsuarioDto.Correo);
 
                 if (usuarioExistente.IsSuccess)
@@ -110,8 +110,15 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                     response.IsSuccess = false;
                     response.Message = "El usuario ya existe";
                  }
-                else
+
+                var idPersonaExistente = await _UsuarioRepositorio.ExisteIdPersona(UsuarioDto.IdPersona);
+
+                if (idPersonaExistente)
                 {
+                    response.IsSuccess = false;
+                    response.Message = "El id persona ya existe";
+                }
+
                     var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
 
                     if (Usuario is {})
@@ -124,7 +131,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                         response.IsSuccess = false;
                         response.Message = "Hubo error al crear el registro";
                     }
-                }
+                
                     
                  return response;
         }

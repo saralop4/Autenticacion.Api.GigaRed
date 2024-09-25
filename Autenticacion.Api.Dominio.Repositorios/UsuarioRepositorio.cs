@@ -1,5 +1,6 @@
 ﻿using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Dominio.Persistencia;
+using Autenticacion.Api.Dominio.Persistencia.Modelos;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
@@ -30,6 +31,18 @@ namespace Autenticacion.Api.Dominio.Repositorios
         public Task<bool> Eliminar(long Id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<bool> ExisteIdPersona(long Id)
+        {
+            using (var conexion = _context.CreateConnection())
+            {
+                var query = "SELECT COUNT(1) FROM Usuarios WHERE IdPersona = @IdPersona";
+                var existe = await conexion.ExecuteScalarAsync<int>(query, new { IdPersona = Id });
+
+                return existe > 0;
+
+            }
         }
 
         public async Task<UsuarioDto> Guardar(UsuarioDto Modelo)
