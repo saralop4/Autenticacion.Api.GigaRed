@@ -1,4 +1,7 @@
-﻿namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
 public partial class Usuario
 {
@@ -30,7 +33,7 @@ public partial class Usuario
 
     public string? IpDeActualizado { get; set; }
 
- //   public virtual Persona IdPersonaNavigation { get; set; } = null!;
+    public virtual Persona IdPersonaNavigation { get; set; } = null!;
 
- //   public virtual Role IdRolNavigation { get; set; } = null!;
+    public virtual Role IdRolNavigation { get; set; } = null!;
 }

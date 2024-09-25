@@ -1,4 +1,4 @@
-﻿namespace Autenticacion.Api.Dominio.DTOs
+﻿namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
 {
     public class TokenDto
     {

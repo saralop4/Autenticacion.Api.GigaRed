@@ -1,4 +1,4 @@
-﻿using Autenticacion.Api.Dominio.DTOs;
+﻿using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Transversal.Modelos;
 
 namespace Autenticacion.Api.Aplicacion.Interfaces

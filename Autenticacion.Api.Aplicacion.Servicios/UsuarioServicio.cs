@@ -1,12 +1,10 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
-using Autenticacion.Api.Dominio.DTOs;
+using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Dominio.Validadores;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
-using FluentValidation;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -41,7 +39,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
             if (!validation.IsValid)
             {
-                response.Message = "Errores de Validacion";
+                response.Message = "Errores de validacion";
                 response.Errors = validation.Errors;
                 return response;
             }
@@ -57,7 +55,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                     
                     response.Data = TokenDto; 
                     response.IsSuccess = true;
-                    response.Message = "Autenticacion Exitosa";
+                    response.Message = "Autenticacion exitosa";
                 }
                 else
                 {
@@ -98,7 +96,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 if (!validation.IsValid)
                 {
                     response.IsSuccess = false;
-                    response.Message = "Errores de Validacion";
+                    response.Message = "Errores de validacion";
                     response.Errors = validation.Errors;
                     return response;
 
@@ -110,21 +108,21 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 if (usuarioExistente.IsSuccess)
                  {
                     response.IsSuccess = false;
-                    response.Message = "El Usuario Ya Existe";
+                    response.Message = "El usuario ya existe";
                  }
                 else
                 {
-                    response.Data = await _UsuarioRepositorio.Guardar(UsuarioDto);
+                    var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
 
-                    if (response.Data)
+                    if (Usuario is {})
                     {
                         response.IsSuccess = true;
-                        response.Message = "Registro Exitoso!!";
+                        response.Message = "Registro exitoso!!";
                     }
                     else
                     {
                         response.IsSuccess = false;
-                        response.Message = "Hubo Error Al Crear El Usuario";
+                        response.Message = "Hubo error al crear el registro";
                     }
                 }
                     
@@ -150,7 +148,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             {
                 var usuarioValidado = await _UsuarioRepositorio.Obtener(Correo);
 
-                if (usuarioValidado is { })
+                if (usuarioValidado is {})
                 {
                     response.Data = usuarioValidado;
                     response.IsSuccess = true;
@@ -158,7 +156,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 else
                 {
                     response.IsSuccess = false;
-                    response.Message = "Usuario No Encontrado";
+                    response.Message = "Usuario no encontrado";
                 }
              }
             catch (Exception ex)

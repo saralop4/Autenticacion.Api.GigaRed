@@ -1,5 +1,5 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
-using Autenticacion.Api.Dominio.DTOs;
+using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -34,11 +34,6 @@ namespace Autenticacion.Api.Controllers.V1
         [HttpPost("RegistrarUsuario")]
         public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioDto usuarioDto)
         {
-            if (usuarioDto == null)
-            {
-                return BadRequest(new { Message = "Datos de usuario no válidos." });
-            }
-
             // Obtener la IP
             var ipDeRegistro = HttpContext.Connection.RemoteIpAddress?.ToString();
 
