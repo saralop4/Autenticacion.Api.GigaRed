@@ -1,8 +1,7 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 
-namespace Autenticacion.Api.Dominio.DTOs
+namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
 {
     public class IniciarSesionDto
     {
@@ -10,7 +9,6 @@ namespace Autenticacion.Api.Dominio.DTOs
         public string Correo { get; set; } = null!;
 
         [JsonPropertyName("Contraseña")]
-        [PasswordPropertyText]
         public string Contraseña { get; set; } = null!;
     }
 }

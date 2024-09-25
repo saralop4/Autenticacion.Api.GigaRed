@@ -1,8 +1,9 @@
-﻿using Autenticacion.Api.Dominio.DTOs;
+﻿using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Dominio.Persistencia;
 using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System.Data;
 
 namespace Autenticacion.Api.Dominio.Repositorios
@@ -31,7 +32,7 @@ namespace Autenticacion.Api.Dominio.Repositorios
             throw new NotImplementedException();
         }
 
-        public async Task<bool> Guardar(UsuarioDto Modelo)
+        public async Task<UsuarioDto> Guardar(UsuarioDto Modelo)
         {
             var contraseñaEncriptada = BCrypt.Net.BCrypt.HashPassword(Modelo.Contraseña);
 
@@ -48,9 +49,11 @@ namespace Autenticacion.Api.Dominio.Repositorios
                 parameters.Add("UsuarioQueRegistra", Modelo.UsuarioQueRegistra);
                 parameters.Add("IpDeRegistro", Modelo.IpDeRegistro);
 
-                var result = await conexion.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
-                
-                return result > 0;
+                var usuarioRegistrado = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
+
+                Console.WriteLine("Valor Devuelto**"+JsonConvert.SerializeObject(usuarioRegistrado));
+
+                return usuarioRegistrado;
 
             }
 

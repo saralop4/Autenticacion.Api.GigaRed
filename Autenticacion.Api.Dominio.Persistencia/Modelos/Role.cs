@@ -1,10 +1,13 @@
-﻿namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
 public partial class Role
 {
     public long IdRol { get; set; }
 
-    public string? Nombre { get; set; }
+    public string Nombre { get; set; } = null!;
 
     public bool? EsSuperUsuario { get; set; }
 
@@ -16,7 +19,7 @@ public partial class Role
 
     public DateOnly FechaDeRegistro { get; set; }
 
-    public TimeOnly? HoraDeRegistro { get; set; }
+    public TimeOnly HoraDeRegistro { get; set; }
 
     public string IpDeRegistro { get; set; } = null!;
 

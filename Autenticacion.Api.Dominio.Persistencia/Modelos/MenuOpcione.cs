@@ -1,4 +1,7 @@
-﻿namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
 public partial class MenuOpcione
 {

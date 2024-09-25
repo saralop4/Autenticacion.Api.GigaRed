@@ -1,4 +1,4 @@
-﻿using Autenticacion.Api.Dominio.DTOs;
+﻿using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 
 namespace Autenticacion.Api.Infraestructura.Interfaces
 {

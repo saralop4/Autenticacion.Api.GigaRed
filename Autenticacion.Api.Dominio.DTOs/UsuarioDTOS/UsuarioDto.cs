@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Autenticacion.Api.Dominio.DTOs
+namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
 {
     public class UsuarioDto
     {
@@ -49,6 +49,6 @@ namespace Autenticacion.Api.Dominio.DTOs
 
         [JsonIgnore]
         [JsonPropertyName("IpDeActualizado")]
-        public string? IpDeActualizado { get; set; }= null;
+        public string? IpDeActualizado { get; set; } = null;
     }
 }

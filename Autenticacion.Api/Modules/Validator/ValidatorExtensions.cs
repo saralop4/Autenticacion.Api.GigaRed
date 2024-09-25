@@ -10,6 +10,8 @@ namespace Autenticacion.Api.Modules.Validator
         { 
             services.AddTransient<IniciarSesionDtoValidador>(); //crea una instancia por cada peticion
             services.AddTransient<UsuarioDtoValidador>();
+            services.AddTransient<PersonaDtoValidador>();
+
             return services;    
         }
     }
