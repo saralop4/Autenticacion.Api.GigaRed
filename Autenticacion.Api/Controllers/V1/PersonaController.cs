@@ -18,14 +18,16 @@ namespace Autenticacion.Api.Controllers.V1
         [HttpPost("RegistrarPersona")]
         public async Task<IActionResult> RegistrarPersona([FromBody] PersonaDto PersonaDto)
         {
-            var ipDeRegistro = HttpContext.Connection.RemoteIpAddress?.ToString();
-
-            if (ipDeRegistro != null)
+            if (string.IsNullOrEmpty(PersonaDto.IpDeRegistro))
             {
-                PersonaDto.IpDeRegistro = ipDeRegistro;
-            }
+                var ipDeRegistro = HttpContext.Connection.RemoteIpAddress?.ToString();
 
-            // Console.WriteLine(JsonConvert.SerializeObject(usuarioDto));
+                if (ipDeRegistro != null)
+                {
+                    PersonaDto.IpDeRegistro = ipDeRegistro;
+                }
+            }
+           
 
             var response = await _IPersonaServicio.RegistrarPersona(PersonaDto);
 
