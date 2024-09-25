@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Autenticacion.Api.Dominio.DTOs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b29959e8bf70de89138300b3db16de89c87db09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+749ea8adb4aa9dbcf8a8bf3159b078edd70d6afd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Autenticacion.Api.Dominio.DTOs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Autenticacion.Api.Dominio.DTOs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

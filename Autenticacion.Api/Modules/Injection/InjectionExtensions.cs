@@ -20,7 +20,8 @@ namespace Autenticacion.Api.Modules.Injection
             services.AddScoped<IUsuarioServicio, UsuarioServicio>();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
-            services.AddTransient<IniciarSesionDtoValidador>(); 
+            services.AddTransient<IniciarSesionDtoValidador>();
+            services.AddTransient<UsuarioDtoValidador>();
 
             return services;    
         }

@@ -56,7 +56,7 @@ namespace Autenticacion.Api.Controllers.V1
                 return Ok(response);
             }
 
-            return BadRequest(new { response.Message });
+            return BadRequest(response);
         }
 
     }
