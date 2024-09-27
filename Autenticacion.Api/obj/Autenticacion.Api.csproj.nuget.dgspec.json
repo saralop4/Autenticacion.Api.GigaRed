@@ -191,14 +191,11 @@
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Interfaces\\Autenticacion.Api.Aplicacion.Interfaces.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Interfaces\\Autenticacion.Api.Aplicacion.Interfaces.csproj"
               },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\Autenticacion.Api.Aplicacion.Validador.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\Autenticacion.Api.Aplicacion.Validador.csproj"
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj"
               },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj"
-              },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj"
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj"
               }
             }
           }
@@ -274,146 +271,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.11.1, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[6.7.3, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[6.7.3, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUI": {
-              "target": "Package",
-              "version": "[6.7.3, )"
-            },
-            "System.Text.Json": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.1.24452.12/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\Autenticacion.Api.Aplicacion.Validador.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\Autenticacion.Api.Aplicacion.Validador.csproj",
-        "projectName": "Autenticacion.Api.Aplicacion.Validador",
-        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\Autenticacion.Api.Aplicacion.Validador.csproj",
-        "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Validador\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\Sarah\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Sarah\\Documents\\Nugets": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.DTOs\\Autenticacion.Api.Dominio.DTOs.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.DTOs\\Autenticacion.Api.Dominio.DTOs.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "AspNetCore.HealthChecks.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
-            "AspNetCore.HealthChecks.UI": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
-            "AspNetCore.HealthChecks.UI.Client": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
-            "AspNetCore.HealthChecks.UI.InMemory.Storage": {
-              "target": "Package",
-              "version": "[8.0.1, )"
-            },
-            "FluentValidation": {
-              "target": "Package",
-              "version": "[11.10.0, )"
-            },
-            "FluentValidation.DependencyInjectionExtensions": {
-              "target": "Package",
-              "version": "[11.10.0, )"
-            },
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[3.6.0, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[3.6.0, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
-              "target": "Package",
-              "version": "[5.1.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -792,8 +649,8 @@
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj"
               },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj"
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj"
               }
             }
           }
@@ -927,12 +784,12 @@
         }
       }
     },
-    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj": {
+    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj",
-        "projectName": "Autenticacion.Api.Dominio.Validadores",
-        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj",
+        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj",
+        "projectName": "Autenticacion.Api.Aplicacion.Validadores",
+        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj",
         "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\obj\\",
         "projectStyle": "PackageReference",
@@ -1087,12 +944,12 @@
         }
       }
     },
-    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
+    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj",
-        "projectName": "Autenticacion.Api.Infraestructura.Interfaces",
-        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj",
+        "projectName": "Autenticacion.Api.Dominio.Interfaces",
+        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj",
         "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
@@ -1422,11 +1279,14 @@
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Servicios\\Autenticacion.Api.Aplicacion.Servicios.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Aplicacion.Servicios\\Autenticacion.Api.Aplicacion.Servicios.csproj"
               },
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj"
+              },
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Repositorios\\Autenticacion.Api.Infraestructura.Repositorios.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Repositorios\\Autenticacion.Api.Infraestructura.Repositorios.csproj"
               },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj"
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj"
               },
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\utenticacion.Api.Transversal.Modelos\\Autenticacion.Api.Transversal.Modelos.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\utenticacion.Api.Transversal.Modelos\\Autenticacion.Api.Transversal.Modelos.csproj"

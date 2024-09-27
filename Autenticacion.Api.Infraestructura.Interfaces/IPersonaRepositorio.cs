@@ -1,6 +1,6 @@
 ﻿using Autenticacion.Api.Dominio.DTOs.PersonaDTOS;
 
-namespace Autenticacion.Api.Infraestructura.Interfaces
+namespace Autenticacion.Api.Dominio.Interfaces
 {
     public interface IPersonaRepositorio : IRepositorioGenerico<PersonaDto>
     {

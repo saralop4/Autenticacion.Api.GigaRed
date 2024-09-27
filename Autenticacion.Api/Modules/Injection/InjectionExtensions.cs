@@ -1,8 +1,7 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Aplicacion.Servicios;
+using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Dominio.Persistencia;
-using Autenticacion.Api.Dominio.Repositorios;
-using Autenticacion.Api.Infraestructura.Interfaces;
 using Autenticacion.Api.Infraestructura.Repositorios;
 using Autenticacion.Api.Transversal.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;

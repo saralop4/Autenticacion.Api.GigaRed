@@ -44,8 +44,9 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Autenticacion.Api.Aplicacion.Interfaces\Autenticacion.Api.Aplicacion.Interfaces.csproj" />
 		<ProjectReference Include="..\Autenticacion.Api.Aplicacion.Servicios\Autenticacion.Api.Aplicacion.Servicios.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Dominio.Persistencia\Autenticacion.Api.Dominio.Persistencia.csproj" />
 		<ProjectReference Include="..\Autenticacion.Api.Dominio.Repositorios\Autenticacion.Api.Infraestructura.Repositorios.csproj" />
-		<ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Infraestructura.Interfaces.csproj" />
+		<ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Dominio.Interfaces.csproj" />
 		<ProjectReference Include="..\utenticacion.Api.Transversal.Modelos\Autenticacion.Api.Transversal.Modelos.csproj" />
 	</ItemGroup>
 

@@ -1,7 +1,6 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace Autenticacion.Api.Controllers.V1
 {

@@ -36,9 +36,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Autenticacion.Api.Aplicacion.Interfaces\Autenticacion.Api.Aplicacion.Interfaces.csproj" />
-    <ProjectReference Include="..\Autenticacion.Api.Aplicacion.Validador\Autenticacion.Api.Aplicacion.Validador.csproj" />
-    <ProjectReference Include="..\Autenticacion.Api.Dominio.Validadores\Autenticacion.Api.Dominio.Validadores.csproj" />
-    <ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Infraestructura.Interfaces.csproj" />
+    <ProjectReference Include="..\Autenticacion.Api.Dominio.Validadores\Autenticacion.Api.Aplicacion.Validadores.csproj" />
+    <ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Dominio.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

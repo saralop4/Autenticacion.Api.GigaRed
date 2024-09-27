@@ -1,7 +1,6 @@
 ﻿using Autenticacion.Api.Dominio.DTOs.PersonaDTOS;
-using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
+using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Dominio.Persistencia;
-using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using System.Data;
