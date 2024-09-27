@@ -2,7 +2,7 @@
 using FluentValidation;
 using System.Text.RegularExpressions;
 
-namespace Autenticacion.Api.Dominio.Validadores
+namespace Autenticacion.Api.Aplicacion.Validadores
 {
     public class PersonaDtoValidador : AbstractValidator<PersonaDto>
     {

@@ -1,7 +1,7 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
+using Autenticacion.Api.Aplicacion.Validadores;
 using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
-using Autenticacion.Api.Dominio.Validadores;
-using Autenticacion.Api.Infraestructura.Interfaces;
+using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -189,7 +189,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(15), 
+                Expires = DateTime.UtcNow.AddMinutes(60), 
                 SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature),
                 Issuer = _appSettings.Issuer,
                 Audience = _appSettings.Audience

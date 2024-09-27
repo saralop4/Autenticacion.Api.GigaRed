@@ -1,4 +1,4 @@
-﻿namespace Autenticacion.Api.Infraestructura.Interfaces
+﻿namespace Autenticacion.Api.Dominio.Interfaces
 {
     public interface IRepositorioGenerico<T> where T : class //agregamos una restriccion para que T siempre sea de tipo class
     {

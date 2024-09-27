@@ -35,7 +35,7 @@ namespace Autenticacion.Api.Modules.Authentication
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false, // Asegúrate de que esta configuración es la deseada
+                    ValidateAudience = false, 
                     ValidIssuer = Issuer,
                     ValidAudience = Audience,
                     ValidateLifetime = true,

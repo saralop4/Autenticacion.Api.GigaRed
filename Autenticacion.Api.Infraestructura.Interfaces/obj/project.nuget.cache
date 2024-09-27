@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g9FJd5/UmuU=",
+  "dgSpecHash": "bsqn0fzlUfs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj",
+  "projectFilePath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sarah\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\8.0.2\\aspnetcore.healthchecks.sqlserver.8.0.2.nupkg.sha512",
     "C:\\Users\\Sarah\\.nuget\\packages\\aspnetcore.healthchecks.ui\\8.0.2\\aspnetcore.healthchecks.ui.8.0.2.nupkg.sha512",

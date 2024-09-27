@@ -336,8 +336,8 @@
               "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj": {
                 "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Persistencia\\Autenticacion.Api.Dominio.Persistencia.csproj"
               },
-              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj"
+              "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj"
               }
             }
           }
@@ -471,12 +471,12 @@
         }
       }
     },
-    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj": {
+    "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj",
-        "projectName": "Autenticacion.Api.Infraestructura.Interfaces",
-        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Infraestructura.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj",
+        "projectName": "Autenticacion.Api.Dominio.Interfaces",
+        "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\Autenticacion.Api.Dominio.Interfaces.csproj",
         "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Infraestructura.Interfaces\\obj\\",
         "projectStyle": "PackageReference",

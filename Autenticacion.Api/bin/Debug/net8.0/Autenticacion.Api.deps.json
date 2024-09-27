@@ -14,7 +14,8 @@
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
           "Autenticacion.Api.Aplicacion.Interfaces": "1.0.0",
           "Autenticacion.Api.Aplicacion.Servicios": "1.0.0",
-          "Autenticacion.Api.Infraestructura.Interfaces": "1.0.0",
+          "Autenticacion.Api.Dominio.Interfaces": "1.0.0",
+          "Autenticacion.Api.Dominio.Persistencia": "1.0.0",
           "Autenticacion.Api.Infraestructura.Repositorios": "1.0.0",
           "Autenticacion.Api.Transversal.Modelos": "1.0.0",
           "MSTest.TestAdapter": "3.6.0",
@@ -1836,9 +1837,8 @@
           "AspNetCore.HealthChecks.UI.Client": "8.0.1",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
           "Autenticacion.Api.Aplicacion.Interfaces": "1.0.0",
-          "Autenticacion.Api.Aplicacion.Validador": "1.0.0",
-          "Autenticacion.Api.Dominio.Validadores": "1.0.0",
-          "Autenticacion.Api.Infraestructura.Interfaces": "1.0.0",
+          "Autenticacion.Api.Aplicacion.Validadores": "1.0.0",
+          "Autenticacion.Api.Dominio.Interfaces": "1.0.0",
           "MSTest.TestAdapter": "3.6.0",
           "MSTest.TestFramework": "3.6.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
@@ -1860,7 +1860,7 @@
           }
         }
       },
-      "Autenticacion.Api.Aplicacion.Validador/1.0.0": {
+      "Autenticacion.Api.Aplicacion.Validadores/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.SqlServer": "8.0.2",
           "AspNetCore.HealthChecks.UI": "8.0.2",
@@ -1874,6 +1874,8 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.11.1",
           "Swashbuckle.AspNetCore.Swagger": "6.7.3",
@@ -1882,7 +1884,7 @@
           "System.Text.Json": "8.0.4"
         },
         "runtime": {
-          "Autenticacion.Api.Aplicacion.Validador.dll": {
+          "Autenticacion.Api.Aplicacion.Validadores.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1910,6 +1912,34 @@
         },
         "runtime": {
           "Autenticacion.Api.Dominio.DTOs.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Autenticacion.Api.Dominio.Interfaces/1.0.0": {
+        "dependencies": {
+          "AspNetCore.HealthChecks.SqlServer": "8.0.2",
+          "AspNetCore.HealthChecks.UI": "8.0.2",
+          "AspNetCore.HealthChecks.UI.Client": "8.0.1",
+          "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
+          "Autenticacion.Api.Dominio.DTOs": "1.0.0",
+          "MSTest.TestAdapter": "3.6.0",
+          "MSTest.TestFramework": "3.6.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
+          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.NET.Test.Sdk": "17.11.1",
+          "Swashbuckle.AspNetCore.Swagger": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.3",
+          "System.Text.Json": "8.0.4"
+        },
+        "runtime": {
+          "Autenticacion.Api.Dominio.Interfaces.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1943,72 +1973,14 @@
           }
         }
       },
-      "Autenticacion.Api.Dominio.Validadores/1.0.0": {
-        "dependencies": {
-          "AspNetCore.HealthChecks.SqlServer": "8.0.2",
-          "AspNetCore.HealthChecks.UI": "8.0.2",
-          "AspNetCore.HealthChecks.UI.Client": "8.0.1",
-          "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
-          "Autenticacion.Api.Dominio.DTOs": "1.0.0",
-          "FluentValidation": "11.10.0",
-          "FluentValidation.DependencyInjectionExtensions": "11.10.0",
-          "MSTest.TestAdapter": "3.6.0",
-          "MSTest.TestFramework": "3.6.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
-          "Microsoft.EntityFrameworkCore": "8.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "Microsoft.Extensions.Configuration": "8.0.0",
-          "Microsoft.NET.Test.Sdk": "17.11.1",
-          "Swashbuckle.AspNetCore.Swagger": "6.7.3",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.3",
-          "System.Text.Json": "8.0.4"
-        },
-        "runtime": {
-          "Autenticacion.Api.Dominio.Validadores.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "Autenticacion.Api.Infraestructura.Interfaces/1.0.0": {
-        "dependencies": {
-          "AspNetCore.HealthChecks.SqlServer": "8.0.2",
-          "AspNetCore.HealthChecks.UI": "8.0.2",
-          "AspNetCore.HealthChecks.UI.Client": "8.0.1",
-          "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
-          "Autenticacion.Api.Dominio.DTOs": "1.0.0",
-          "MSTest.TestAdapter": "3.6.0",
-          "MSTest.TestFramework": "3.6.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
-          "Microsoft.EntityFrameworkCore": "8.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "Microsoft.Extensions.Configuration": "8.0.0",
-          "Microsoft.NET.Test.Sdk": "17.11.1",
-          "Swashbuckle.AspNetCore.Swagger": "6.7.3",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.3",
-          "System.Text.Json": "8.0.4"
-        },
-        "runtime": {
-          "Autenticacion.Api.Infraestructura.Interfaces.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "Autenticacion.Api.Infraestructura.Repositorios/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.SqlServer": "8.0.2",
           "AspNetCore.HealthChecks.UI": "8.0.2",
           "AspNetCore.HealthChecks.UI.Client": "8.0.1",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "8.0.1",
+          "Autenticacion.Api.Dominio.Interfaces": "1.0.0",
           "Autenticacion.Api.Dominio.Persistencia": "1.0.0",
-          "Autenticacion.Api.Infraestructura.Interfaces": "1.0.0",
           "BCrypt.Net-Next": "4.0.3",
           "Dapper": "2.1.35",
           "MSTest.TestAdapter": "3.6.0",
@@ -3014,7 +2986,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Autenticacion.Api.Aplicacion.Validador/1.0.0": {
+    "Autenticacion.Api.Aplicacion.Validadores/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3024,17 +2996,12 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autenticacion.Api.Dominio.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Autenticacion.Api.Dominio.Persistencia/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Autenticacion.Api.Dominio.Validadores/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Autenticacion.Api.Infraestructura.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

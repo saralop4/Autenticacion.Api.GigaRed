@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Autenticacion.Api.Dominio.Persistencia\Autenticacion.Api.Dominio.Persistencia.csproj" />
-    <ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Infraestructura.Interfaces.csproj" />
+    <ProjectReference Include="..\Autenticacion.Api.Infraestructura.Interfaces\Autenticacion.Api.Dominio.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

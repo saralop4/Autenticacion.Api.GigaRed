@@ -1,13 +1,12 @@
 ﻿using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
+using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Dominio.Persistencia;
-using Autenticacion.Api.Dominio.Persistencia.Modelos;
-using Autenticacion.Api.Infraestructura.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System.Data;
 
-namespace Autenticacion.Api.Dominio.Repositorios
+namespace Autenticacion.Api.Infraestructura.Repositorios
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
     {

@@ -1,8 +1,7 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
+using Autenticacion.Api.Aplicacion.Validadores;
 using Autenticacion.Api.Dominio.DTOs.PersonaDTOS;
-using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
-using Autenticacion.Api.Dominio.Validadores;
-using Autenticacion.Api.Infraestructura.Interfaces;
+using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
 
 namespace Autenticacion.Api.Aplicacion.Servicios

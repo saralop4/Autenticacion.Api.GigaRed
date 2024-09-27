@@ -6716,9 +6716,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj",
-      "projectName": "Autenticacion.Api.Dominio.Validadores",
-      "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Dominio.Validadores.csproj",
+      "projectUniqueName": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj",
+      "projectName": "Autenticacion.Api.Aplicacion.Validadores",
+      "projectPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\Autenticacion.Api.Aplicacion.Validadores.csproj",
       "packagesPath": "C:\\Users\\Sarah\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Sarah\\Documents\\Proyecto Soft Redes\\Autenticacion.Api.GigaRed\\Autenticacion.Api.Dominio.Validadores\\obj\\",
       "projectStyle": "PackageReference",
