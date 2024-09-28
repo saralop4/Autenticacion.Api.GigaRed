@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Autenticacion.Api.Infraestructura.Repositorios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a0f24f8bf6d579249057b036137e1074efb8e9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+660eb42e92fd48f2581952d0b9ebde0fc60e1496")]
 [assembly: System.Reflection.AssemblyProductAttribute("Autenticacion.Api.Infraestructura.Repositorios")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Autenticacion.Api.Infraestructura.Repositorios")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

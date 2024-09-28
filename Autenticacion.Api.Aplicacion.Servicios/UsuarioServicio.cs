@@ -3,6 +3,7 @@ using Autenticacion.Api.Aplicacion.Validadores;
 using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -60,7 +61,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 else
                 {
                     response.IsSuccess = false;
-                    response.Message = "Usuario no existe";
+                    response.Message = "Usuario o Contraseña Incorrectos";
                 }
 
             }
@@ -86,6 +87,8 @@ namespace Autenticacion.Api.Aplicacion.Servicios
         {
             var response = new Response<bool>();
 
+            try
+            {
                 var validation = _UsuarioDtoValidador.Validate(new UsuarioDto()
                 {
                     IdPersona = UsuarioDto.IdPersona,
@@ -97,45 +100,49 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 if (!validation.IsValid)
                 {
                     response.IsSuccess = false;
-                    response.Message = "Errores de validacion";
+                    response.Message = "Errores de validación";
                     response.Errors = validation.Errors;
                     return response;
-
                 }
 
                 var usuarioExistente = await ObtenerUsuario(UsuarioDto.Correo);
-
                 if (usuarioExistente.IsSuccess)
-                 {
+                {
                     response.IsSuccess = false;
                     response.Message = "El usuario ya existe";
-                 }
+                    return response;
+                }
 
                 var idPersonaExistente = await _UsuarioRepositorio.ExisteIdPersona(UsuarioDto.IdPersona);
-
                 if (idPersonaExistente)
                 {
                     response.IsSuccess = false;
-                    response.Message = "El id persona ya existe";
+                    response.Message = "El ID de persona ya existe";
+                    return response; // Evitamos continuar si el ID de persona ya existe
                 }
 
-                    var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
+                var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
 
-                    if (Usuario is {})
-                    {
-                        response.IsSuccess = true;
-                        response.Message = "Registro exitoso!!";
-                    }
-                    else
-                    {
-                        response.IsSuccess = false;
-                        response.Message = "Hubo error al crear el registro";
-                    }
-                
-                    
-                 return response;
+                if (Usuario is { })
+                {
+                    response.IsSuccess = true;
+                    response.Message = "Registro exitoso!";
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Message = "Hubo un error al crear el registro";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Message = $"Ocurrió un error: {ex.Message}";
+            }
+
+            return response;
         }
-        
+
 
         public Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina)
         {
