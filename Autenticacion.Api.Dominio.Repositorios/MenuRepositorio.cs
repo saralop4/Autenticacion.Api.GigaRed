@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Autenticacion.Api.Infraestructura.Repositorios
 {
-    class MenuRepositorio : IMenuRepositorio
+    public class MenuRepositorio : IMenuRepositorio
     {
         private readonly DapperContext _context;
         public MenuRepositorio(IConfiguration configuration)
