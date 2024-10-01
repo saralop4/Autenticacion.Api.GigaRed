@@ -79,8 +79,6 @@ namespace Autenticacion.Api.Infraestructura.Repositorios
                 var query = "ObtenerUsuarioPorCorreo"; 
                 var parameters = new DynamicParameters(); 
                 parameters.Add("Correo", Id);
-
-
                 var Usuario = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
 
                 return Usuario;

@@ -1,11 +1,12 @@
 ﻿using Autenticacion.Api.Aplicacion.Interfaces;
 using Autenticacion.Api.Aplicacion.Validadores;
+using Autenticacion.Api.Dominio.DTOs;
 using Autenticacion.Api.Dominio.DTOs.UsuarioDTOS;
 using Autenticacion.Api.Dominio.Interfaces;
 using Autenticacion.Api.Transversal.Modelos;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -17,11 +18,13 @@ namespace Autenticacion.Api.Aplicacion.Servicios
         private readonly IUsuarioRepositorio _UsuarioRepositorio;
         private readonly IniciarSesionDtoValidador _IniciarSesionDtoValidador;
         private readonly UsuarioDtoValidador _UsuarioDtoValidador;
+        private readonly IMenuRepositorio _MenuRepositorio;
         private readonly AppSettings _appSettings;
 
-        public UsuarioServicio(IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio,
+        public UsuarioServicio(IMenuRepositorio MenuRepositorio,IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio,
             IniciarSesionDtoValidador IniciarSesionDtoValidador, UsuarioDtoValidador UsuarioDtoValidador)
         {
+            _MenuRepositorio = MenuRepositorio; 
             _appSettings = appSettings.Value;
             _UsuarioRepositorio = UsuarioRepositorio;
             _IniciarSesionDtoValidador = IniciarSesionDtoValidador;
@@ -40,7 +43,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
             if (!validation.IsValid)
             {
-                response.Message = "Errores de validacion";
+                response.Message = "Errores de validación encontrados";
                 response.Errors = validation.Errors;
                 return response;
             }
@@ -51,7 +54,9 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
                 if (usuarioValidado is {}) //si usuarioValidado no es nulo
                 {
-                    string token =  GenerateJwtToken(usuarioValidado.IdUsuario, usuarioValidado.Correo);
+                    var menus = await _MenuRepositorio.ObtenerMenusPorRol(usuarioValidado.IdRol);
+
+                    string token =  GenerateJwtToken(usuarioValidado.IdUsuario,usuarioValidado.IdRol, usuarioValidado.Correo, menus);
                     TokenDto TokenDto = new TokenDto{ Token= token};
                     
                     response.Data = TokenDto; 
@@ -180,7 +185,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             return response;
 
         }
-        private string GenerateJwtToken(long IdUsuario, string Correo)
+        private string GenerateJwtToken(long IdUsuario, long IdRol, string Correo, List<MenuDto> menus)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -190,34 +195,37 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, IdUsuario.ToString()),
-                new Claim("Correo", Correo)
+                new Claim("Correo", Correo),
+                new Claim("IdRol", IdRol.ToString())
             };
+
+            // Convertir los menús a JSON
+            var menuJson = JsonConvert.SerializeObject(menus);
+
+            // Añadir el menú encriptado al token como un nuevo claim
+            claims.Add(new Claim("Menus", menuJson));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddMinutes(60), 
+                Expires = DateTime.UtcNow.AddMinutes(60),
                 SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature),
                 Issuer = _appSettings.Issuer,
                 Audience = _appSettings.Audience
-                // EncryptingCredentials = new EncryptingCredentials(encryptionKey, SecurityAlgorithms.Aes256KW, SecurityAlgorithms.Aes256CbcHmacSha512)
             };
 
             try
             {
                 var token = tokenHandler.CreateToken(tokenDescriptor);
-
-                // Escribir el token
                 var encryptedToken = tokenHandler.WriteToken(token);
-
                 return encryptedToken;
             }
             catch (Exception ex)
             {
-                // Maneja la excepción según tus necesidades
                 Console.WriteLine($"Error al generar el token: {ex.Message}");
                 return null;
             }
         }
+
     }
 }
