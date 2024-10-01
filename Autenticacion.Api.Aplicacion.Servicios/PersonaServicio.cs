@@ -55,7 +55,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             if (!validation.IsValid)
             {
                 response.IsSuccess = false;
-                response.Message = "Errores de validacion";
+                response.Message = "Errores de validación encontrados";
                 response.Errors = validation.Errors;
                 return response;
 

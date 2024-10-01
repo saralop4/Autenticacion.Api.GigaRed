@@ -26,11 +26,22 @@ namespace Autenticacion.Api
             builder.Services.AddVersioning();
             builder.Services.AddAuthentication(builder.Configuration);
           //  builder.Services.AddMapper();
-            builder.Services.AddFeature(builder.Configuration);
+         //   builder.Services.AddFeature(builder.Configuration);
             builder.Services.AddValidator();
           //  builder.Services.AddHealthCheck(builder.Configuration);
             builder.Services.AddInjection(builder.Configuration);
             builder.Services.AddSwaggerDocumentation();
+
+            builder.Services.AddCors(option =>
+            {
+                option.AddPolicy("policyApi", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
 
             var app = builder.Build();
 
@@ -48,8 +59,12 @@ namespace Autenticacion.Api
                 });
             }
 
+
+
             app.UseHttpsRedirection();
             app.UseAuthentication();
+
+            app.UseCors("policyApi");
             app.UseAuthorization();
             app.MapControllers();
 
