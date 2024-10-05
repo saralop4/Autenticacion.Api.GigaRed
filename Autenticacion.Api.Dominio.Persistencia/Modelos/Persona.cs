@@ -7,6 +7,8 @@ public partial class Persona
 {
     public long IdPersona { get; set; }
 
+    public long IdIndicativo { get; set; }
+
     public string PrimerNombre { get; set; } = null!;
 
     public string? SegundoNombre { get; set; }
@@ -15,7 +17,7 @@ public partial class Persona
 
     public string? SegundoApellido { get; set; }
 
-    public decimal Telefono { get; set; }
+    public string Telefono { get; set; } = null!;
 
     public byte[]? Foto { get; set; }
 
@@ -38,6 +40,10 @@ public partial class Persona
     public TimeOnly? HoraDeActualizado { get; set; }
 
     public string? IpDeActualizado { get; set; }
+
+    public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
+
+    public virtual Indicativo IdIndicativoNavigation { get; set; } = null!;
 
     public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
 }

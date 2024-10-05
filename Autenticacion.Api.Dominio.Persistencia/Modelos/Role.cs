@@ -7,7 +7,7 @@ public partial class Role
 {
     public long IdRol { get; set; }
 
-    public string Nombre { get; set; } = null!;
+    public string? Nombre { get; set; }
 
     public bool? EsSuperUsuario { get; set; }
 
@@ -19,7 +19,7 @@ public partial class Role
 
     public DateOnly FechaDeRegistro { get; set; }
 
-    public TimeOnly HoraDeRegistro { get; set; }
+    public TimeOnly? HoraDeRegistro { get; set; }
 
     public string IpDeRegistro { get; set; } = null!;
 

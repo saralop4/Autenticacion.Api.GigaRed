@@ -3,15 +3,11 @@ using System.Collections.Generic;
 
 namespace Autenticacion.Api.Dominio.Persistencia.Modelos;
 
-public partial class MenuOpcione
+public partial class Cliente
 {
-    public long IdMenuOpcion { get; set; }
+    public long IdCliente { get; set; }
 
-    public string? Nombre { get; set; }
-
-    public string? Ruta { get; set; }
-
-    public string? Icono { get; set; }
+    public long IdPersona { get; set; }
 
     public bool? EstadoEliminado { get; set; }
 
@@ -31,5 +27,5 @@ public partial class MenuOpcione
 
     public string? IpDeActualizado { get; set; }
 
-    public virtual ICollection<MenuAplicacione> MenuAplicaciones { get; set; } = new List<MenuAplicacione>();
+    public virtual Persona IdPersonaNavigation { get; set; } = null!;
 }
