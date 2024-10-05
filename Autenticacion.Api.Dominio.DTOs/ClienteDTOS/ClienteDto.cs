@@ -1,23 +1,17 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
+namespace Autenticacion.Api.Dominio.DTOs.ClienteDTOS
 {
-    public class UsuarioDto
+    public class ClienteDto
     {
-        [JsonIgnore]
-        public long IdUsuario { get; set; }
 
-        [JsonPropertyName("IdRol")]
-        public long IdRol { get; set; } = 1;
+        [JsonIgnore]
+        public long IdCliente { get; set; }
 
         [JsonPropertyName("IdPersona")]
         public long IdPersona { get; set; }
 
-        [JsonPropertyName("Correo")]
-        public string Correo { get; set; } = null!;
-
-        [JsonPropertyName("Contraseña")]
-        public string Contraseña { get; set; } = null!;
+        public bool Estado {  get; set; }   
 
         [JsonPropertyName("EstadoEliminado")]
         public bool? EstadoEliminado { get; set; } = false;
@@ -29,12 +23,15 @@ namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
         public string? UsuarioQueActualiza { get; set; }
 
         [JsonIgnore]
+        [JsonPropertyName("FechaDeRegistro")]
         public DateTime FechaDeRegistro { get; set; }
 
         [JsonIgnore]
+        [JsonPropertyName("HoraDeRegistro")]
         public TimeSpan HoraDeRegistro { get; set; }
 
         [JsonIgnore]
+        [JsonPropertyName("IpDeRegistro")]
         public string? IpDeRegistro { get; set; } = null;
 
         [JsonPropertyName("FechaDeActualizado")]
@@ -44,6 +41,7 @@ namespace Autenticacion.Api.Dominio.DTOs.UsuarioDTOS
         public TimeSpan? HoraDeActualizado { get; set; } = null;
 
         [JsonIgnore]
+        [JsonPropertyName("IpDeActualizado")]
         public string? IpDeActualizado { get; set; } = null;
     }
 }
