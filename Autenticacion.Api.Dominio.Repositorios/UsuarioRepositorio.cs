@@ -63,8 +63,6 @@ namespace Autenticacion.Api.Infraestructura.Repositorios
 
                 var usuarioRegistrado = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
 
-                Console.WriteLine("**Valor Devuelto**"+JsonConvert.SerializeObject(usuarioRegistrado));
-
                 return usuarioRegistrado;
 
             }

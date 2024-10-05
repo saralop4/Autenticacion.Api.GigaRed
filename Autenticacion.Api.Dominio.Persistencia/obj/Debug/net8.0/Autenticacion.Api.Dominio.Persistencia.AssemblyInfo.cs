@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Autenticacion.Api.Dominio.Persistencia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c215695bab4f1b80ce42d68ac27bc63bae265041")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2755a178f663747c44b45910aa07c9bd65d3e45a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Autenticacion.Api.Dominio.Persistencia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Autenticacion.Api.Dominio.Persistencia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

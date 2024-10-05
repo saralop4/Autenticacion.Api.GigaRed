@@ -56,6 +56,8 @@ namespace Autenticacion.Api.Aplicacion.Servicios
                 {
                     var menus = await _MenuRepositorio.ObtenerMenusPorRol(usuarioValidado.IdRol);
 
+                    
+
                     string token =  GenerateJwtToken(usuarioValidado.IdUsuario,usuarioValidado.IdRol, usuarioValidado.Correo, menus);
                     TokenDto TokenDto = new TokenDto{ Token= token};
                     
@@ -128,7 +130,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
 
                 var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
 
-                if (Usuario is { })
+                if (Usuario is {})
                 {
                     response.IsSuccess = true;
                     response.Message = "Registro exitoso!";
@@ -185,6 +187,7 @@ namespace Autenticacion.Api.Aplicacion.Servicios
             return response;
 
         }
+
         private string GenerateJwtToken(long IdUsuario, long IdRol, string Correo, List<MenuDto> menus)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

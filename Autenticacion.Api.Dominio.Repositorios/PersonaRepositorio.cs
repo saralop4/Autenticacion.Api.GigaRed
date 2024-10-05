@@ -39,6 +39,7 @@ namespace Autenticacion.Api.Infraestructura.Repositorios
                 var query = "GuardarPersona";  
                 var parameters = new DynamicParameters();
 
+                parameters.Add("IdIndicativo", Modelo.IdIndicativo);
                 parameters.Add("PrimerNombre", Modelo.PrimerNombre);
                 parameters.Add("PrimerApellido", Modelo.PrimerApellido);
                 parameters.Add("Telefono", Modelo.Telefono);
@@ -57,7 +58,7 @@ namespace Autenticacion.Api.Infraestructura.Repositorios
         {
             using (var Conexion = _context.CreateConnection())
             {
-                var Query = "";
+                var Query = "ObtenerPersona";
                 var Parameters = new DynamicParameters();
                 Parameters.Add("IdPersona", Id);
 

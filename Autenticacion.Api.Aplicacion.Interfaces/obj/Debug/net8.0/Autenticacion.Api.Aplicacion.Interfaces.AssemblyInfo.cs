@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Autenticacion.Api.Aplicacion.Interfaces")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c215695bab4f1b80ce42d68ac27bc63bae265041")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b7159919b4fb7aca01b6007d6c10cd2e86cf1ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("Autenticacion.Api.Aplicacion.Interfaces")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Autenticacion.Api.Aplicacion.Interfaces")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

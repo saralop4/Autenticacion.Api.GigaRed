@@ -8,6 +8,9 @@ namespace Autenticacion.Api.Dominio.DTOs.PersonaDTOS
         [JsonPropertyName("IdPersona")]
         public long IdPersona { get; set; }
 
+        [JsonPropertyName("IdIndicativo")]
+        public long IdIndicativo { get; set; }  
+
         [JsonPropertyName("PrimerNombre")]
         public string PrimerNombre { get; set; } = null!;
 

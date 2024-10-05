@@ -23,7 +23,7 @@ public partial class Usuario
 
     public DateOnly FechaDeRegistro { get; set; }
 
-    public TimeOnly HoraDeRegistro { get; set; }
+    public TimeOnly? HoraDeRegistro { get; set; }
 
     public string IpDeRegistro { get; set; } = null!;
 
