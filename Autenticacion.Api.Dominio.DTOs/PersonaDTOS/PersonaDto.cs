@@ -5,7 +5,6 @@ namespace Autenticacion.Api.Dominio.DTOs.PersonaDTOS
     public class PersonaDto
     {
         [JsonIgnore]
-        [JsonPropertyName("IdPersona")]
         public long IdPersona { get; set; }
 
         [JsonPropertyName("IdIndicativo")]
@@ -42,11 +41,9 @@ namespace Autenticacion.Api.Dominio.DTOs.PersonaDTOS
         public string? UsuarioQueActualiza { get; set; } = null;
 
         [JsonIgnore]
-        [JsonPropertyName("FechaDeRegistro")]
         public DateTime FechaDeRegistro { get; set; } 
 
         [JsonIgnore]
-        [JsonPropertyName("HoraDeRegistro")]
         public TimeSpan HoraDeRegistro { get; set; }
 
         [JsonPropertyName("IpDeRegistro")]
