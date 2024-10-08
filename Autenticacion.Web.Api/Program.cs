@@ -35,6 +35,17 @@ public class Program
         builder.Services.AddInjection(builder.Configuration);
         builder.Services.AddSwaggerDocumentation();
 
+        //builder.Services.AddCors(option =>
+        //{
+        //    option.AddPolicy("policyApi", builder =>
+        //    {
+        //        builder.AllowAnyOrigin()
+        //        .AllowAnyMethod()
+        //        .AllowAnyHeader();
+        //    });
+        //});
+
+
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
@@ -58,6 +69,7 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseAuthentication();
+     //   app.UseCors("policyApi");
         app.UseAuthorization();
         app.MapControllers();
       //  app.MapHealthChecksUI();
