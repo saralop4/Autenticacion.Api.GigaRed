@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <DocumentationFile>C:\Users\Sarah\Documents\Proyecto Soft Redes\Autenticacion.Web.Api\Autenticacion.Web.Api\Autenticacion.Web.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="8.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Core" Version="8.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticacion.Web.Api.Aplicacion.Interfaces\Autenticacion.Web.Api.Aplicacion.Interfaces.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Aplicacion.Servicios\Autenticacion.Web.Api.Aplicacion.Servicios.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Aplicacion.Validadores\Autenticacion.Web.Api.Aplicacion.Validadores.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Dominio.Interfaces\Autenticacion.Web.Api.Dominio.Interfaces.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Dominio.Persistencia\Autenticacion.Web.Api.Dominio.Persistencia.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Infraestructura.Repositorios\Autenticacion.Web.Api.Infraestructura.Repositorios.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Transversal.Modelos\Autenticacion.Web.Api.Transversal.Modelos.csproj" />
+  </ItemGroup>
+
+</Project>
