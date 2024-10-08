@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Autenticacion.Web.Api.Dominio.DTOs\Autenticacion.Web.Api.Dominio.DTOs.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Dominio.Interfaces\Autenticacion.Web.Api.Dominio.Interfaces.csproj" />
+    <ProjectReference Include="..\Autenticacion.Web.Api.Dominio.Persistencia\Autenticacion.Web.Api.Dominio.Persistencia.csproj" />
+  </ItemGroup>
+
+</Project>
