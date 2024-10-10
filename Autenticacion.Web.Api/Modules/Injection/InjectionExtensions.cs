@@ -19,10 +19,12 @@ public static class InjectionExtensions
         services.AddScoped<IUsuarioServicio, UsuarioServicio>();
         services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         services.AddScoped<IMenuRepositorio, MenuRepositorio>();
+        services.AddScoped<ICiudadRepositorio, CiudadRepositorio>();
+        services.AddScoped<ICiudadServicio, CiudadServicio>();
+        services.AddScoped<IIndicativoServicio, IndicativoServicio>();
+        services.AddScoped<IIndicativoRepositorio, IndicativoRepositorio>();
+
         services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
-        //services.AddTransient<IniciarSesionDtoValidador>();
-        //services.AddTransient<UsuarioDtoValidador>();
-        //services.AddTransient<PersonaDtoValidador>();
 
         return services;
     }

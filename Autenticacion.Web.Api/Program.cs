@@ -54,9 +54,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-       // app.UseAuthentication();
         app.UseCors("policyApi");
-       // app.UseAuthorization();
         app.MapControllers();
         app.Run();
 
