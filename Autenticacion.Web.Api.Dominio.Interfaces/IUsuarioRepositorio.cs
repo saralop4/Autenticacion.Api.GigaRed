@@ -2,9 +2,11 @@
 
 namespace Autenticacion.Web.Api.Dominio.Interfaces
 {
-    public interface IUsuarioRepositorio : IRepositorioGenerico<UsuarioDto>
+    public interface IUsuarioRepositorio 
     {
-        public Task<UsuarioDto> UsuarioAutenticado(IniciarSesionDto IniciarSesionDto);
+        public Task<UsuarioDto> Guardar(UsuarioDto Modelo);
+        public Task<UsuarioDto> Obtener(string Id);
+        public Task<UsuarioDto> ValidarUsuario(IniciarSesionDto IniciarSesionDto);
         public Task<bool> ExisteIdPersona(long Id);
     }
 }
