@@ -50,11 +50,13 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
 
             try
             {
-                var usuarioValidado = await _UsuarioRepositorio.UsuarioAutenticado(IniciarSesionDto);
+                var usuarioValidado = await _UsuarioRepositorio.ValidarUsuario(IniciarSesionDto);
 
                 if (usuarioValidado is {}) //si usuarioValidado no es nulo
                 {
                     var menus = await _MenuRepositorio.ObtenerMenusPorRol(usuarioValidado.IdRol);
+
+                    Console.WriteLine(JsonConvert.SerializeObject(menus));
 
                     string token = GenerateJwtToken(usuarioValidado.IdUsuario, usuarioValidado.IdRol, usuarioValidado.Correo, menus);
                     TokenDto TokenDto = new TokenDto { Token = token };
@@ -128,7 +130,7 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
 
                 var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
 
-                if (Usuario is { })
+                if (Usuario is {})
                 {
                     response.IsSuccess = true;
                     response.Message = "Registro exitoso!";
@@ -147,7 +149,6 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
 
             return response;
         }
-
 
         public Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina)
         {

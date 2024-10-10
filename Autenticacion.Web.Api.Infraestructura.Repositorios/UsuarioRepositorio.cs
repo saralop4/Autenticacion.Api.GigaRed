@@ -16,21 +16,6 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
             _context = new DapperContext(configuration);
         }
 
-        public Task<bool> Actualizar(UsuarioDto Modelo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> Contar()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> Eliminar(long Id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> ExisteIdPersona(long Id)
         {
             using (var conexion = _context.CreateConnection())
@@ -82,17 +67,7 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
             }
         }
 
-        public Task<IEnumerable<UsuarioDto>> ObtenerTodo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<UsuarioDto>> ObtenerTodoConPaginacion(int NumeroDePagina, int TamañoPagina)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<UsuarioDto> UsuarioAutenticado(IniciarSesionDto IniciarSesionDto)
+        public async Task<UsuarioDto> ValidarUsuario(IniciarSesionDto IniciarSesionDto)
         {
 
             if (IniciarSesionDto == null)
