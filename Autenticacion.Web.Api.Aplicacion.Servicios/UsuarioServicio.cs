@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Autenticacion.Web.Api.Transversal.Interfaces;
 
 namespace Autenticacion.Web.Api.Aplicacion.Servicios
 {
@@ -17,29 +18,32 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
     {
         private readonly IUsuarioRepositorio _UsuarioRepositorio;
         private readonly IniciarSesionDtoValidador _IniciarSesionDtoValidador;
-        private readonly UsuarioDtoValidador _UsuarioDtoValidador;
+        private readonly UsuarioPersonaDtoValidador _UsuarioPersonaDtoValidador;
         private readonly IMenuRepositorio _MenuRepositorio;
         private readonly AppSettings _appSettings;
+        private readonly IAppLogger<UsuarioServicio> _logger;
 
-        public UsuarioServicio(IMenuRepositorio MenuRepositorio, IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio,
-            IniciarSesionDtoValidador IniciarSesionDtoValidador, UsuarioDtoValidador UsuarioDtoValidador)
+
+        public UsuarioServicio(IAppLogger<UsuarioServicio> logger,IMenuRepositorio MenuRepositorio, IOptions<AppSettings> appSettings, IUsuarioRepositorio UsuarioRepositorio,
+            IniciarSesionDtoValidador IniciarSesionDtoValidador, UsuarioPersonaDtoValidador UsuarioPersonaDtoValidador)
         {
+            _logger = logger;
             _MenuRepositorio = MenuRepositorio;
             _appSettings = appSettings.Value;
             _UsuarioRepositorio = UsuarioRepositorio;
             _IniciarSesionDtoValidador = IniciarSesionDtoValidador;
-            _UsuarioDtoValidador = UsuarioDtoValidador;
+            _UsuarioPersonaDtoValidador = UsuarioPersonaDtoValidador;
         }
 
-        public Task<Response<bool>> ActualizarUsuario(UsuarioDto UsuarioDto)
+        public Task<Response<bool>> ActualizarUsuario(UsuarioPersonaDto UsuarioDto)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<Response<TokenDto>> AutenticarUsuario(IniciarSesionDto IniciarSesionDto)
+        public async Task<Response<TokenDto>> AutenticarUsuario(IniciarSesionDto iniciarSesionDto)
         {
             var response = new Response<TokenDto>();
-            var validation = _IniciarSesionDtoValidador.Validate(new IniciarSesionDto() { Correo = IniciarSesionDto.Correo, Contraseña = IniciarSesionDto.Contraseña }); //esta variable almacena la respuesta del validador fluent
+            var validation = _IniciarSesionDtoValidador.Validate(new IniciarSesionDto() { Correo = iniciarSesionDto.Correo, Contraseña = iniciarSesionDto.Contraseña }); //esta variable almacena la respuesta del validador fluent
 
             if (!validation.IsValid)
             {
@@ -50,20 +54,21 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
 
             try
             {
-                var usuarioValidado = await _UsuarioRepositorio.ValidarUsuario(IniciarSesionDto);
+                var usuarioValidado = await _UsuarioRepositorio.ValidarUsuario(iniciarSesionDto);
 
-                if (usuarioValidado is {}) //si usuarioValidado no es nulo
+                if (usuarioValidado is not null) 
                 {
                     var menus = await _MenuRepositorio.ObtenerMenusPorRol(usuarioValidado.IdRol);
 
-                    Console.WriteLine(JsonConvert.SerializeObject(menus));
+                  //  Console.WriteLine(JsonConvert.SerializeObject(menus));
 
-                    string token = GenerateJwtToken(usuarioValidado.IdUsuario, usuarioValidado.IdRol, usuarioValidado.Correo, menus);
+                    string token = GenerateJwtToken(usuarioValidado.IdUsuario, usuarioValidado.Rol, usuarioValidado.Correo, menus);
                     TokenDto TokenDto = new TokenDto { Token = token };
 
                     response.Data = TokenDto;
                     response.IsSuccess = true;
                     response.Message = "Autenticacion exitosa";
+                    _logger.LogInformation("Autenticacion exitosa!!");
                 }
                 else
                 {
@@ -90,18 +95,26 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
             throw new NotImplementedException();
         }
 
-        public async Task<Response<bool>> RegistrarUsuario(UsuarioDto UsuarioDto)
+        public async Task<Response<bool>> RegistrarUsuario(UsuarioPersonaDto UsuarioDto)
         {
             var response = new Response<bool>();
 
             try
             {
-                var validation = _UsuarioDtoValidador.Validate(new UsuarioDto()
+                var validation = _UsuarioPersonaDtoValidador.Validate(new UsuarioPersonaDto()
                 {
-                    IdPersona = UsuarioDto.IdPersona,
+
+                    IdIndicativo = UsuarioDto.IdIndicativo,
+                    IdCiudad = UsuarioDto.IdCiudad,
+                    PrimerNombre = UsuarioDto.PrimerNombre,
+                    SegundoNombre = UsuarioDto.SegundoNombre,
+                    PrimerApellido = UsuarioDto.PrimerApellido,
+                    SegundoApellido = UsuarioDto.SegundoApellido,
+                    Telefono = UsuarioDto.Telefono,
+                    UsuarioQueRegistraPersona = UsuarioDto.UsuarioQueRegistraPersona,
                     Correo = UsuarioDto.Correo,
                     Contraseña = UsuarioDto.Contraseña,
-                    UsuarioQueRegistra = UsuarioDto.UsuarioQueRegistra
+                    UsuarioQueRegistraUsuario = UsuarioDto.UsuarioQueRegistraUsuario
                 });
 
                 if (!validation.IsValid)
@@ -112,20 +125,13 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
                     return response;
                 }
 
-                var usuarioExistente = await ObtenerUsuario(UsuarioDto.Correo);
-                if (usuarioExistente.IsSuccess)
+                var usuarioExistente = await _UsuarioRepositorio.Obtener(UsuarioDto.Correo);
+
+                if (usuarioExistente is not null)
                 {
                     response.IsSuccess = false;
                     response.Message = "El usuario ya existe";
                     return response;
-                }
-
-                var idPersonaExistente = await _UsuarioRepositorio.ExisteIdPersona(UsuarioDto.IdPersona);
-                if (idPersonaExistente)
-                {
-                    response.IsSuccess = false;
-                    response.Message = "El ID de persona ya existe";
-                    return response; // Evitamos continuar si el ID de persona ya existe
                 }
 
                 var Usuario = await _UsuarioRepositorio.Guardar(UsuarioDto);
@@ -134,6 +140,7 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
                 {
                     response.IsSuccess = true;
                     response.Message = "Registro exitoso!";
+                    _logger.LogInformation("Registro exitosa!!");
                 }
                 else
                 {
@@ -145,49 +152,14 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
             {
                 response.IsSuccess = false;
                 response.Message = $"Ocurrió un error: {ex.Message}";
+                _logger.LogError(ex.Message);
             }
 
             return response;
         }
 
-        public Task<ResponsePagination<IEnumerable<UsuarioDto>>> ObtenerTodoConPaginación(int NumeroDePagina, int TamañoDePagina)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Response<IEnumerable<UsuarioDto>>> ObtenerTodosLosUsuarios()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Response<UsuarioDto>> ObtenerUsuario(string Correo)
-        {
-            var response = new Response<UsuarioDto>();
-
-            try
-            {
-                var usuarioValidado = await _UsuarioRepositorio.Obtener(Correo);
-
-                if (usuarioValidado is { })
-                {
-                    response.Data = usuarioValidado;
-                    response.IsSuccess = true;
-                }
-                else
-                {
-                    response.IsSuccess = false;
-                    response.Message = "Usuario no encontrado";
-                }
-            }
-            catch (Exception ex)
-            {
-                response.Message = ex.Message;
-            }
-            return response;
-
-        }
-
-        private string GenerateJwtToken(long IdUsuario, long IdRol, string Correo, List<MenuDto> menus)
+      
+        private string GenerateJwtToken(long idUsuario, string rol, string correo, List<MenuDto> menus)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -196,9 +168,9 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, IdUsuario.ToString()),
-                new Claim("Correo", Correo),
-                new Claim("IdRol", IdRol.ToString())
+                new Claim(ClaimTypes.Name, idUsuario.ToString()),
+                new Claim("Correo", correo),
+                new Claim("Rol", rol)
             };
 
             // Convertir los menús a JSON

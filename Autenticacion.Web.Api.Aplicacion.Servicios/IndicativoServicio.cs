@@ -9,9 +9,9 @@ namespace Autenticacion.Web.Api.Aplicacion.Servicios
     public class IndicativoServicio : IIndicativoServicio
     {
         private readonly IIndicativoRepositorio _indicativoRepositorio;
-        private readonly IAppLogger<CiudadServicio> _logger;
+        private readonly IAppLogger<IndicativoServicio> _logger;
 
-        public IndicativoServicio(IIndicativoRepositorio indicativoRepositorio,IAppLogger<CiudadServicio> logger)
+        public IndicativoServicio(IIndicativoRepositorio indicativoRepositorio,IAppLogger<IndicativoServicio> logger)
         {
             _indicativoRepositorio = indicativoRepositorio;
             _logger = logger;
