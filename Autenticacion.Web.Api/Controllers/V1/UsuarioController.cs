@@ -30,14 +30,16 @@ namespace Autenticacion.Web.Api.Controllers.V1
         }
 
         [HttpPost("RegistrarUsuario")]
-        public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioDto usuarioDto)
+        public async Task<IActionResult> RegistrarUsuario([FromBody] UsuarioPersonaDto usuarioDto)
         {
             // Obtener la IP
             var ipDeRegistro = HttpContext.Connection.RemoteIpAddress?.ToString();
 
             if (ipDeRegistro != null)
             {
-                usuarioDto.IpDeRegistro = ipDeRegistro;
+                usuarioDto.IpDeRegistroPersona = ipDeRegistro;
+                usuarioDto.IpDeRegistroUsuario = ipDeRegistro;
+
             }
 
             // Console.WriteLine(JsonConvert.SerializeObject(usuarioDto));

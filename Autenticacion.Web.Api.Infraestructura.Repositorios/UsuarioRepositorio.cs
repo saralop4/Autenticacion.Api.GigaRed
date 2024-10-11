@@ -16,38 +16,36 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
             _context = new DapperContext(configuration);
         }
 
-        public async Task<bool> ExisteIdPersona(long Id)
-        {
-            using (var conexion = _context.CreateConnection())
-            {
-                var query = "SELECT COUNT(1) FROM Usuarios WHERE IdPersona = @IdPersona";
-                var existe = await conexion.ExecuteScalarAsync<int>(query, new { IdPersona = Id });
-
-                return existe > 0;
-
-            }
-        }
-
-        public async Task<UsuarioDto> Guardar(UsuarioDto Modelo)
+        public async Task<bool> Guardar(UsuarioPersonaDto Modelo)
         {
             var contraseñaEncriptada = BCrypt.Net.BCrypt.HashPassword(Modelo.Contraseña);
 
             using (var conexion = _context.CreateConnection())
             {
 
-                var query = "RegistrarUsuario";  //nombre del procedimiento almacenado
+                var query = "RegistrarUsuarioYPersona";  
                 var parameters = new DynamicParameters();
 
+                parameters.Add("IdIndicativo", Modelo.IdIndicativo);
+                parameters.Add("IdCiudad", Modelo.IdCiudad);
+                parameters.Add("PrimerNombre", Modelo.PrimerNombre);
+                parameters.Add("SegundoNombre", Modelo.SegundoNombre);
+                parameters.Add("PrimerApellido", Modelo.PrimerApellido);
+                parameters.Add("SegundoApellido", Modelo.SegundoApellido);
+                parameters.Add("Telefono", Modelo.Telefono);
+                parameters.Add("NombreFoto", Modelo.NombreFoto);
+                parameters.Add("UsuarioQueRegistraPersona", Modelo.UsuarioQueRegistraPersona);
+                parameters.Add("IpDeRegistroPersona", Modelo.IpDeRegistroPersona);
+
                 parameters.Add("IdRol", Modelo.IdRol);
-                parameters.Add("IdPersona", Modelo.IdPersona);
                 parameters.Add("Correo", Modelo.Correo);
                 parameters.Add("Contraseña", contraseñaEncriptada);
-                parameters.Add("UsuarioQueRegistra", Modelo.UsuarioQueRegistra);
-                parameters.Add("IpDeRegistro", Modelo.IpDeRegistro);
+                parameters.Add("UsuarioQueRegistraUsuario", Modelo.UsuarioQueRegistraUsuario);
+                parameters.Add("IpDeRegistroUsuario", Modelo.IpDeRegistroUsuario);
 
-                var usuarioRegistrado = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
+                var usuarioRegistrado = await conexion.ExecuteAsync(query, param: parameters, commandType: CommandType.StoredProcedure);
 
-                return usuarioRegistrado;
+                return usuarioRegistrado > 0;
 
             }
 
@@ -58,7 +56,7 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
             using (var conexion = _context.CreateConnection())
             {
 
-                var query = "ObtenerUsuarioPorCorreo";
+                var query = "ObtenerUsuario";
                 var parameters = new DynamicParameters();
                 parameters.Add("Correo", Id);
                 var Usuario = await conexion.QuerySingleOrDefaultAsync<UsuarioDto>(query, param: parameters, commandType: CommandType.StoredProcedure);
@@ -77,7 +75,7 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
 
                 using (var conexion = _context.CreateConnection())
                 {
-                    var query = "ObtenerUsuarioPorCorreo";
+                    var query = "ObtenerUsuario";
                     var parameters = new DynamicParameters();
                     parameters.Add("Correo", IniciarSesionDto.Correo);
 
@@ -101,7 +99,6 @@ namespace Autenticacion.Web.Api.Infraestructura.Repositorios
                 throw new Exception("Error durante la autenticación del usuario.", ex);
             }
         }
-
 
     }
 }
