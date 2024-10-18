@@ -41,14 +41,14 @@ namespace Autenticacion.Web.Api.Aplicacion.Validadores
             RuleFor(u => u.UsuarioQueRegistraPersona)
                 .NotEmpty().WithMessage("El usuario que registra persona es obligatorio.")
                 .NotNull().WithMessage("El usuario que registra persona no puede ser nulo.")
-                .MaximumLength(80).WithMessage("El usuario que registra no puede tener más de 80 caracteres.")
-                .Must(CorreoValido).WithMessage("El usuario que registra debe tener un formato válido. (ejemplo@dominio.com)");
+                .Length(10, 80).WithMessage("El correo debe ser entre 10 y  80 caracteres.")
+                .EmailAddress().WithMessage("El usuario que registra debe tener un formato válido. (ejemplo@dominio.com)");
 
             RuleFor(u => u.Correo)
                 .NotEmpty().WithMessage("El correo es obligatorio.")
                 .NotNull().WithMessage("El correo no puede ser nulo.")
-                .MaximumLength(80).WithMessage("El correo no puede tener más de 80 caracteres.")
-                .Must(CorreoValido).WithMessage("El correo debe tener un formato válido. (ejemplo@dominio.com)");
+                .Length(10, 80).WithMessage("El correo debe ser entre 10 y  80 caracteres.")
+                .EmailAddress().WithMessage("El correo debe tener un formato válido. (ejemplo@dominio.com)");
 
 
             RuleFor(u => u.Contraseña)
@@ -60,15 +60,9 @@ namespace Autenticacion.Web.Api.Aplicacion.Validadores
             RuleFor(u => u.UsuarioQueRegistraUsuario)
                 .NotEmpty().WithMessage("El usuario que registra usuario es obligatorio.")
                 .NotNull().WithMessage("El usuario que registra usuario no puede ser nulo.")
-                .MaximumLength(80).WithMessage("El usuario que usuario no puede tener más de 80 caracteres.")
-                .Must(CorreoValido).WithMessage("El usuario que usuario debe tener un formato válido. (ejemplo@dominio.com)");
+                .Length(10, 80).WithMessage("El correo debe ser entre 10 y  80 caracteres.")
+                .EmailAddress().WithMessage("El usuario que usuario debe tener un formato válido. (ejemplo@dominio.com)");
 
-        }
-
-        private bool CorreoValido(string correo)
-        {
-            var correoValido = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            return Regex.IsMatch(correo, correoValido);
         }
         private bool ContieneNumeroYCaracteresEspeciales(string contraseña)
         {
@@ -79,10 +73,5 @@ namespace Autenticacion.Web.Api.Aplicacion.Validadores
         {
             return telefono.All(char.IsDigit);
         }
-
-        //public bool SoloNumerosLong(long idPersona)
-        //{
-        //    return idPersona.ToString().All(char.IsDigit);
-        //}
     }
 }
