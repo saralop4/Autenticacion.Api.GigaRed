@@ -3,7 +3,9 @@ using Autenticacion.Web.Api.Modules.Injection;
 using Autenticacion.Web.Api.Modules.Swagger;
 using Autenticacion.Web.Api.Modules.Validator;
 using Autenticacion.Web.Api.Modules.Versioning;
+using Autenticacion.Web.Api.Modules.WatchDog;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using WatchDog;
 
 namespace Autenticacion.Web.Api;
 
@@ -20,6 +22,7 @@ public class Program
         builder.Services.AddValidator();
         builder.Services.AddInjection(builder.Configuration);
         builder.Services.AddSwaggerDocumentation();
+        builder.Services.AddWatchDog(builder.Configuration);
 
         builder.Services.AddCors(option =>
         {
@@ -53,9 +56,17 @@ public class Program
                 });
         }
 
+        app.UseWatchDogExceptionLogger();
         app.UseHttpsRedirection();
         app.UseCors("policyApi");
         app.MapControllers();
+        app.UseWatchDog(opt =>
+        {
+            opt.WatchPageUsername = builder.Configuration["WatchDog:WatchPageUsername"];
+            opt.WatchPagePassword = builder.Configuration["WatchDog:WatchPagePassword"];
+            //opt.WatchPageUsername = "admin";
+            //opt.WatchPagePassword = "admin@123";
+        });
         app.Run();
 
     }
